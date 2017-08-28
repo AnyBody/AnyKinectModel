@@ -60,15 +60,15 @@ Main = {
         AnyFolder DrawC3DMarkers = {};
         AnyFolder &BodyModelRef=..HumanModel.BodyModel;
         #include "Environment.any"
-        #include "HumanRefEntity.any"
-        #include "ConditionalContacts.any"
-        #include "CoM_View.any"
-        
       };
       
       //Connection between environment and the human    
-      AnyFolder ModelEnvironmentConnection = {
-        #include "JointsAndDriversOptimized.any"      
+      AnyFolder ModelEnvironmentConnection = {        
+        #include "JointsAndDriversOptimized.any" 
+        
+        #include"GRFPrediction/GRF_instantiation.any"
+        #include"GRFPrediction/WeakResiduals.any"
+
       };
       
       Main.Studies.InverseDynamicStudy.InverseDynamics.Criterion.Power=2.0;
@@ -79,17 +79,7 @@ Main = {
       tEnd = Main.ModelSetup.tEnd;
       nStep = Main.ModelSetup.nStep*5;
     };
-    
-    
-    //This study is only used for loading the optimized parameters    
-//    AnyOptKinStudy LoadParametersOptimizationResults =     {
-//      AnyFolder &Study = .InverseDynamicStudy;
-//      AnyFolder &HumanModel = .HumanModel;
-//      ParameterOptimization.ConvergenceTol=1e-3;
-//      Analysis =   {
-//        AnyOperation &ref = .Study.Kinematics;
-//      };
-//    };
+   
    };
   
   

@@ -3,28 +3,13 @@
 
 AnyFixedRefFrame GlobalRef ={
   Origin={0,0,0};
-  //AnyDrawRefFrame drw={ScaleXYZ=0.4*{1,1,1};};
-};  
-
-
-
-AnyFixedRefFrame GroundRef ={
-//  AnyRefNode Ground1 = {
-//    sRel = {-0.38, -0.02, -0.39};
-//    AnyDrawRefFrame drw = {
-//      ScaleXYZ=0.1*{1,1,1};
-//      RGB = {0.5, 0, 0.9};
-//    };
-//  };
-AnyDrawRefFrame drw={ScaleXYZ=0.4*{1,1,1};};
+  
+  
+  AnyDrawRefFrame drw={ScaleXYZ=0.4*{1,1,1};};
   
   AnyRefNode ForcePlate1 = 
   {
-    ARel = RotMat(-90*pi/180, x) * RotMat(90*pi/180, z) ;
-    //sRel = {0.307+0.01, 0.01, -0.263+0.01};
-    //sRel = {0.2430413, -0.06270958, -0.2233112};
-    
-    sRel = {0.45, 0.02, 0.05};
+    sRel={0,-0.03,0.0};    
     AnyDrawRefFrame drw = {
       ScaleXYZ=0.2*{1,1,1};
       RGB = {0.5, 0, 0.9};
@@ -33,12 +18,13 @@ AnyDrawRefFrame drw={ScaleXYZ=0.4*{1,1,1};};
   
   AnyRefNode ForcePlate2 = 
   {
-    ARel = RotMat(-90*pi/180, x) * RotMat(90*pi/180, z) ;
-    sRel = {0.95, 0.02, 0.50};
+    sRel={0,-0.03,0.0};
     AnyDrawRefFrame drw = {
       ScaleXYZ=0.2*{1,1,1};
       RGB = {0.5, 0, 0.9};
     };
-  };
     
+    
+  };
 };
+

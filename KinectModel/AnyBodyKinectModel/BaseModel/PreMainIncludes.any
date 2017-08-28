@@ -19,11 +19,7 @@
 #path TEMP_FILE_PATH "Tmp"
 #endif
 
-//#include "<AMMR_PATH>/Body/AAUHuman/ToolBox/Mocap/CreateMarkerClass.any"
-//#include "<AMMR_PATH>/Body/AAUHuman/ToolBox/Mocap/ForcePlateType2AutoDetection.any"
-//#include "<AMMR_PATH>/Body/AAUHuman/ToolBox/Mocap/CreateMarkerClassTD.any"
-#include "<ANYBODY_PATH_TOOLBOX>/Mocap/OptimizeAnthropometricsOnOffV2.any"
-#include "ConditionalContactDistanceAndVelocityDepClass.any"
 #include "ClassTemplates.any"
-#include "FootPlateConditionalContact.any"
+#include"GRFPrediction/FootPlateConditionalContact.any"
+
 #endif

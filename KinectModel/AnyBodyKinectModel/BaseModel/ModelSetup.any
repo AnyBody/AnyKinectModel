@@ -511,7 +511,7 @@ AnyFolder ModelSetup ={
     Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Radius= {
     
      AnyRefNode RightWristExtraDriveNode1 = {
-      sRel = .Scale({-0.235, -0.015-0.026, 0.01});
+      sRel = .Scale({-0.235, -0.015+0.026, 0.01});
       #include "DrawBVHHumanModelNodes.any"
       
     }; 
@@ -524,7 +524,7 @@ AnyFolder ModelSetup ={
       Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Radius= {
     
      AnyRefNode RightWristExtraDriveNode2 = {
-      sRel = .Scale({-0.235, -0.015+0.026, 0.01});
+      sRel = .Scale({-0.235, -0.015-0.026, 0.01});
       #include "DrawBVHHumanModelNodes.any"
       
     }; 
