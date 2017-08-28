@@ -1,0 +1,65 @@
+
+#path SUBJECT_PATH "."
+
+AnyFolder SubjectSpecificData = {
+       
+  
+  AnyFolder MarkerPos = {
+    AnyVec3 HeelMarker = {-0.03104974, 0.01352436, 0.0146257};
+    AnyVec3 ToeMarker= {0.2684801, 0.02890321, 0.002888251};
+    AnyVec3 MidfootLateralMarker = {0.1628627, -0.00255456, 0.07045269};  
+  
+    AnyVec3 RAsisMarker = {0.1250608 , -0.02008401,  0.1295 };
+    AnyVec3 LAsisMarker = { 0.1250608 , -0.02008401, -0.1295};
+    AnyVec3 LPsisMarker = {-0.07194569,  0.01086048, -0.030 };
+    AnyVec3 RPsisMarker = {-0.07194569,  0.01086048, 0.03 };
+
+  };
+  AnyFolder MarkerWeights =  {
+    AnyVar PatellaX = 0.0;
+    AnyVar PatellaY = 0.0;
+    AnyVar PatellaZ = 10;
+
+    AnyVar ToeX = 1.0;
+    AnyVar ToeY = 0.0;
+    AnyVar ToeZ = 1.0;
+    
+  };
+  
+  
+  #define LEGS_INCLUDED 1
+  
+  //These antrhopometric data will be used as initial guess for the optimization alogorithm the optimization algoritm will allow changes to the 
+  //segment lengths
+  AnyFolder Anthropometrics={
+    AnyVar BodyMass=63;  //the mass is automatically distributed to the segments
+    AnyVar BodyHeight=1.75;  //height
+    
+   AnyFolder &SP = Main.Studies.HumanModel.Scaling.StandardParameters;
+   
+   #if LEGS_INCLUDED == 1
+   AnyVar StandardBodyHeight = SP.Head.Height+SP.Trunk.Height+SP.Right.LengthLeg+0.05;
+   #else
+   AnyVar StandardBodyHeight = SP.Head.Height+SP.Trunk.Height;
+   
+   #endif
+   
+   AnyVar TrunkHeightIni = SP.Trunk.Height*BodyHeight/StandardBodyHeight;
+          
+    AnyVar ThighLengthIni= 0.3734534;  //rigth and left side is mirrored 
+    AnyVar ShankLengthIni= 0.3620814;
+    AnyVar FootLengthIni=0.21;
+    AnyVar PelvisWidthIni=0.16; //distance between hip joints
+    
+    AnyVar HeadHeightIni = 0.14;//height in neutral position from  C1HatNode to top of head
+    AnyVar UpperArmLengthIni = 0.340079;
+    AnyVar LowerArmLengthIni =0.2690167;
+    AnyVar HandLengthIni = 0.182;
+    AnyVar HandBreadth = 0.085;     
+ 
+  };
+  
+  Main.TrialSpecificData= {
+    AnyFolder &Anthropometrics = Main.SubjectSpecificData.Anthropometrics;
+  };  
+};

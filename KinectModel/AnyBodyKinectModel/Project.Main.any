@@ -1,0 +1,17 @@
+#ifndef INCLUDE_FILES_ANY
+#path BASE_MODEL_PATH "BaseModel/"
+#path PROJECT_PATH "."
+#endif
+
+Main = {
+  AnyProject Project = {
+    #include "Subjects/TrialSelector.any"
+    
+    Tasks = {
+    #ifdef INCLUDE_FILES_ANY
+      
+    #endif
+    
+    };
+  };
+};

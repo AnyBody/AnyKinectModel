@@ -1,0 +1,120 @@
+#class_template CreateAndDriveSegment (Name,FilePath, AnimateData){
+  
+  AnyInputFile Data1 = {
+    FileName = FilePath + Name + "X.txt";
+  };
+  
+  AnyInputFile Data2 = {
+    FileName = FilePath + Name + "Y.txt";
+  };
+  
+  AnyInputFile Data3 = {
+    FileName = FilePath + Name + "Z.txt";
+    
+  };
+  
+  AnyInputFile DataInitialPos = {
+    FileName = FilePath + Name + "InitPos.txt";
+    
+  };
+  
+  
+  AnySeg Seg = {
+    Mass = 0;
+    Jii ={0.0,0.0,0.0};
+    
+    r0 = {.DataInitialPos.Data[0][0],.DataInitialPos.Data[1][0],.DataInitialPos.Data[2][0]};
+    Axes0 = {{.DataInitialPos.Data[3][0],.DataInitialPos.Data[4][0],.DataInitialPos.Data[5][0]},{.DataInitialPos.Data[6][0],.DataInitialPos.Data[7][0],.DataInitialPos.Data[8][0]},{.DataInitialPos.Data[9][0],.DataInitialPos.Data[10][0],.DataInitialPos.Data[11][0]}};
+    
+    
+    AnyRefNode O ={
+      sRel = {0,0,0};
+      #if AnimateData == 1
+      AnyDrawNode drw ={ScaleXYZ=0.01*{1,1,1};};
+      //AnyDrawRefFrame drw2 ={RGB={1,1,1};};
+      #endif
+    };
+    
+    AnyRefNode Px ={
+      sRel = {1,0,0};
+      //AnyDrawNode drw ={};
+    };
+    
+    AnyRefNode Py ={
+      sRel = {0,1,0};
+      //AnyDrawNode drw ={};
+    };    
+    
+    AnyRefNode Pz ={
+      sRel = {0,0,1};
+      //AnyDrawNode drw ={};      
+    };
+        
+    //AnyDrawRefFrame drw ={ ScaleXYZ = {0.15, 0.15, 0.15};RGB={1,0,0};};
+    //    AnyDrawRefFrame drw ={RGB={1,0,0};};
+    
+  };
+  
+  AnyFunButterworthFilter LowPassFilter = 
+  {
+    //z0 = {};
+    //AutomaticInitialConditionOnOff = On;
+    //FilterForwardBackwardOnOff = On;
+    N = 2;
+    //W = {};
+    Fs = 1/Main.ModelSetup.InputData.Header.FrameTime;
+    Fc = {5.0};
+    Type = LowPass;
+  };
+  
+  
+  
+  AnyKinEqInterPolDriver D1 = 
+  {
+    T = .Data1.T;
+    Data={.LowPassFilter(.Data1.Data[0]),.LowPassFilter(.Data1.Data[1]),.LowPassFilter(.Data1.Data[2])};
+    CType = {Soft,Soft,Soft};
+    Type = PiecewiseLinear;
+    //BsplineOrder = 4;
+    
+    
+    AnyKinLinear lin = {
+      AnyRefNode &node = ..Seg.Px;
+    };
+    Reaction.Type ={Off,Off,Off};
+  };
+  
+  AnyKinEqInterPolDriver D2 = 
+  {
+    T = .Data2.T;
+    Data={.LowPassFilter(.Data2.Data[0]),.LowPassFilter(.Data2.Data[1]),.LowPassFilter(.Data2.Data[2])};
+    CType = {Soft,Soft,Soft};
+    Type = PiecewiseLinear;
+    //BsplineOrder = 4;
+    
+    
+    AnyKinLinear lin = {
+      AnyRefNode &node = ..Seg.Py;
+    };
+    Reaction.Type ={Off,Off,Off};
+  };
+  
+  AnyKinEqInterPolDriver D3 = 
+  {
+    T = .Data3.T;
+    Data={.LowPassFilter(.Data3.Data[0]),.LowPassFilter(.Data3.Data[1]),.LowPassFilter(.Data3.Data[2])};
+    CType = {Soft,Soft,Soft};
+    Type = PiecewiseLinear;
+    //BsplineOrder = 4;
+    
+    AnyKinLinear lin = {
+      AnyRefNode &node = ..Seg.Pz;
+    };
+    Reaction.Type ={Off,Off,Off};
+  };
+  
+};
+
+
+
+

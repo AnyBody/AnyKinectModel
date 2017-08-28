@@ -1,0 +1,384 @@
+#class_template FootPlateConditionalContact (BaseObjectPara, TargetObject1,TargetObject2,TargetObject3,TargetObject4,TargetObject5,TargetObject6,TargetObject7,TargetObject8,TargetObject9,TargetObject10,TargetObject11,TargetObject12, DisplayTriggerVolumePara, DisplayTargetNodePara,UserDefinedDistLimitLowPara,UserDefinedDistLimitHighPara,UserDefinedRadiusLimitPara, UserDefinedVelLimitHighPara,StrengthPara,StaticFrictionCoefficientPara,NormalDirectionPara, FrictionDirection1Para, FrictionDirection2Para,NormalDirectionParString){
+  
+
+ 
+ ConditionalContactDistanceAndVelocityDepClass Contact1 (
+  BaseObject = BaseObjectPara,
+  TargetObject = TargetObject1,
+  DisplayTriggerVolume = DisplayTriggerVolumePara,
+  DisplayTargetNode =0
+  ) = {
+    UserDefinedDistLimitLow = UserDefinedDistLimitLowPara; 
+    UserDefinedDistLimitHigh = UserDefinedDistLimitHighPara;
+    UserDefinedRadiusLimit= UserDefinedRadiusLimitPara;
+    UserDefinedVelLimitHigh = UserDefinedVelLimitHighPara;
+    Strength = StrengthPara; 
+    StaticFrictionCoefficient = StaticFrictionCoefficientPara;
+    NormalDirection = NormalDirectionPara;
+    FrictionDirection1 = FrictionDirection1Para;
+    FrictionDirection2 = FrictionDirection2Para;
+  };
+  
+  
+  ConditionalContactDistanceAndVelocityDepClass Contact2 (
+  BaseObject = BaseObjectPara,
+  TargetObject = TargetObject2,
+  DisplayTriggerVolume = 0,
+  DisplayTargetNode = 0
+  ) = {
+    UserDefinedDistLimitLow = UserDefinedDistLimitLowPara; 
+    UserDefinedDistLimitHigh = UserDefinedDistLimitHighPara;
+    UserDefinedRadiusLimit= UserDefinedRadiusLimitPara;
+    UserDefinedVelLimitHigh = UserDefinedVelLimitHighPara;
+    Strength = StrengthPara; 
+    StaticFrictionCoefficient = StaticFrictionCoefficientPara;
+    NormalDirection = NormalDirectionPara;
+    FrictionDirection1 = FrictionDirection1Para;
+    FrictionDirection2 = FrictionDirection2Para;
+  };
+   
+  
+    
+  ConditionalContactDistanceAndVelocityDepClass Contact3 (
+  BaseObject = BaseObjectPara,
+  TargetObject = TargetObject3,
+  DisplayTriggerVolume = 0,
+  DisplayTargetNode =0
+  ) = {
+    UserDefinedDistLimitLow = UserDefinedDistLimitLowPara; 
+    UserDefinedDistLimitHigh = UserDefinedDistLimitHighPara;
+    UserDefinedRadiusLimit= UserDefinedRadiusLimitPara;
+    UserDefinedVelLimitHigh = UserDefinedVelLimitHighPara;
+    Strength = StrengthPara; 
+    StaticFrictionCoefficient = StaticFrictionCoefficientPara;
+    NormalDirection = NormalDirectionPara;
+    FrictionDirection1 = FrictionDirection1Para;
+    FrictionDirection2 = FrictionDirection2Para;
+  };
+  
+  
+  ConditionalContactDistanceAndVelocityDepClass Contact4 (
+  BaseObject = BaseObjectPara,
+  TargetObject = TargetObject4,
+  DisplayTriggerVolume = 0,
+  DisplayTargetNode =0
+  ) = {
+    UserDefinedDistLimitLow = UserDefinedDistLimitLowPara; 
+    UserDefinedDistLimitHigh = UserDefinedDistLimitHighPara;
+    UserDefinedRadiusLimit= UserDefinedRadiusLimitPara;
+    UserDefinedVelLimitHigh = UserDefinedVelLimitHighPara;
+    Strength = StrengthPara;
+    StaticFrictionCoefficient = StaticFrictionCoefficientPara;
+    NormalDirection = NormalDirectionPara;
+    FrictionDirection1 = FrictionDirection1Para;
+    FrictionDirection2 = FrictionDirection2Para;
+  };
+  
+  
+  
+  
+  
+   ConditionalContactDistanceAndVelocityDepClass Contact5 (
+  BaseObject = BaseObjectPara,
+  TargetObject = TargetObject5,
+  DisplayTriggerVolume = 0,
+  DisplayTargetNode =0
+  ) = {
+    UserDefinedDistLimitLow = UserDefinedDistLimitLowPara; 
+    UserDefinedDistLimitHigh = UserDefinedDistLimitHighPara;
+    UserDefinedRadiusLimit= UserDefinedRadiusLimitPara;
+    UserDefinedVelLimitHigh = UserDefinedVelLimitHighPara;
+    Strength = StrengthPara; 
+    StaticFrictionCoefficient = StaticFrictionCoefficientPara;
+    NormalDirection = NormalDirectionPara;
+    FrictionDirection1 = FrictionDirection1Para;
+    FrictionDirection2 = FrictionDirection2Para;
+  }; 
+  
+  
+  
+   ConditionalContactDistanceAndVelocityDepClass Contact6 (
+  BaseObject = BaseObjectPara,
+  TargetObject = TargetObject6,
+  DisplayTriggerVolume = 0,
+  DisplayTargetNode =0
+  ) = {
+    UserDefinedDistLimitLow = UserDefinedDistLimitLowPara; 
+    UserDefinedDistLimitHigh = UserDefinedDistLimitHighPara;
+    UserDefinedRadiusLimit= UserDefinedRadiusLimitPara;
+    UserDefinedVelLimitHigh = UserDefinedVelLimitHighPara;
+    Strength = StrengthPara; 
+    StaticFrictionCoefficient = StaticFrictionCoefficientPara;
+    NormalDirection = NormalDirectionPara;
+    FrictionDirection1 = FrictionDirection1Para;
+    FrictionDirection2 = FrictionDirection2Para;
+  };
+  
+  
+  
+   ConditionalContactDistanceAndVelocityDepClass Contact7 (
+  BaseObject = BaseObjectPara,
+  TargetObject = TargetObject7,
+  DisplayTriggerVolume = 0,
+  DisplayTargetNode =0
+  ) = {
+    UserDefinedDistLimitLow = UserDefinedDistLimitLowPara; 
+    UserDefinedDistLimitHigh = UserDefinedDistLimitHighPara;
+    UserDefinedRadiusLimit= UserDefinedRadiusLimitPara;
+    UserDefinedVelLimitHigh = UserDefinedVelLimitHighPara;
+    Strength = StrengthPara; 
+    StaticFrictionCoefficient = StaticFrictionCoefficientPara;
+    NormalDirection = NormalDirectionPara;
+    FrictionDirection1 = FrictionDirection1Para;
+    FrictionDirection2 = FrictionDirection2Para;
+  };
+  
+   ConditionalContactDistanceAndVelocityDepClass Contact8 (
+  BaseObject = BaseObjectPara,
+  TargetObject = TargetObject8,
+  DisplayTriggerVolume = 0,
+  DisplayTargetNode =0
+  ) = {
+    UserDefinedDistLimitLow = UserDefinedDistLimitLowPara; 
+    UserDefinedDistLimitHigh = UserDefinedDistLimitHighPara;
+    UserDefinedRadiusLimit= UserDefinedRadiusLimitPara;
+    UserDefinedVelLimitHigh = UserDefinedVelLimitHighPara;
+    Strength = StrengthPara; 
+    StaticFrictionCoefficient = StaticFrictionCoefficientPara;
+    NormalDirection = NormalDirectionPara;
+    FrictionDirection1 = FrictionDirection1Para;
+    FrictionDirection2 = FrictionDirection2Para;
+  };
+  
+  
+   ConditionalContactDistanceAndVelocityDepClass Contact9 (
+  BaseObject = BaseObjectPara,
+  TargetObject = TargetObject9,
+  DisplayTriggerVolume = 0,
+  DisplayTargetNode =0
+  ) = {
+     UserDefinedDistLimitLow = UserDefinedDistLimitLowPara; 
+    UserDefinedDistLimitHigh = UserDefinedDistLimitHighPara;
+    UserDefinedRadiusLimit= UserDefinedRadiusLimitPara;
+    UserDefinedVelLimitHigh = UserDefinedVelLimitHighPara;
+    Strength = StrengthPara; 
+    StaticFrictionCoefficient = StaticFrictionCoefficientPara;
+    NormalDirection = NormalDirectionPara;
+    FrictionDirection1 = FrictionDirection1Para;
+    FrictionDirection2 = FrictionDirection2Para;
+  };
+  
+   ConditionalContactDistanceAndVelocityDepClass Contact10 (
+  BaseObject = BaseObjectPara,
+  TargetObject = TargetObject10,
+  DisplayTriggerVolume = 0,
+  DisplayTargetNode =0
+  ) = {
+     UserDefinedDistLimitLow = UserDefinedDistLimitLowPara; 
+    UserDefinedDistLimitHigh = UserDefinedDistLimitHighPara;
+    UserDefinedRadiusLimit= UserDefinedRadiusLimitPara;
+    UserDefinedVelLimitHigh = UserDefinedVelLimitHighPara;
+    Strength = StrengthPara; 
+    StaticFrictionCoefficient = StaticFrictionCoefficientPara;
+    NormalDirection = NormalDirectionPara;
+    FrictionDirection1 = FrictionDirection1Para;
+    FrictionDirection2 = FrictionDirection2Para;
+  };
+  
+  ConditionalContactDistanceAndVelocityDepClass Contact11 (
+  BaseObject = BaseObjectPara,
+  TargetObject = TargetObject11,
+  DisplayTriggerVolume = 0,
+  DisplayTargetNode =0
+  ) = {
+     UserDefinedDistLimitLow = UserDefinedDistLimitLowPara; 
+    UserDefinedDistLimitHigh = UserDefinedDistLimitHighPara;
+    UserDefinedRadiusLimit= UserDefinedRadiusLimitPara;
+    UserDefinedVelLimitHigh = UserDefinedVelLimitHighPara;
+    Strength = StrengthPara; 
+    StaticFrictionCoefficient = StaticFrictionCoefficientPara;
+    NormalDirection = NormalDirectionPara;
+    FrictionDirection1 = FrictionDirection1Para;
+    FrictionDirection2 = FrictionDirection2Para;
+  };
+  
+   ConditionalContactDistanceAndVelocityDepClass Contact12 (
+  BaseObject = BaseObjectPara,
+  TargetObject = TargetObject12,
+  DisplayTriggerVolume = 0,
+  DisplayTargetNode =0
+  ) = {
+     UserDefinedDistLimitLow = UserDefinedDistLimitLowPara; 
+    UserDefinedDistLimitHigh = UserDefinedDistLimitHighPara;
+    UserDefinedRadiusLimit= UserDefinedRadiusLimitPara;
+    UserDefinedVelLimitHigh = UserDefinedVelLimitHighPara;
+    Strength = StrengthPara; 
+    StaticFrictionCoefficient = StaticFrictionCoefficientPara;
+    NormalDirection = NormalDirectionPara;
+    FrictionDirection1 = FrictionDirection1Para;
+    FrictionDirection2 = FrictionDirection2Para;
+  };
+ 
+  
+      AnyFloat TotalNormalForceVec = 
+    Contact1.Push.NormalForceVec+
+    Contact2.Push.NormalForceVec+
+    Contact3.Push.NormalForceVec+
+    Contact4.Push.NormalForceVec+
+    Contact5.Push.NormalForceVec+
+    Contact6.Push.NormalForceVec+
+    Contact8.Push.NormalForceVec+
+    Contact8.Push.NormalForceVec+
+    Contact9.Push.NormalForceVec+
+    Contact10.Push.NormalForceVec+
+    Contact11.Push.NormalForceVec+
+    Contact12.Push.NormalForceVec;
+    
+    AnyFloat TotalFrictionForceVec = 
+    Contact1.Push.FrictionForceVec+
+    Contact2.Push.FrictionForceVec+
+    Contact3.Push.FrictionForceVec+
+    Contact4.Push.FrictionForceVec+
+    Contact5.Push.FrictionForceVec+
+    Contact6.Push.FrictionForceVec+
+    Contact7.Push.FrictionForceVec+
+    Contact8.Push.FrictionForceVec+
+    Contact9.Push.FrictionForceVec+
+    Contact10.Push.FrictionForceVec+
+    Contact11.Push.FrictionForceVec+
+    Contact12.Push.FrictionForceVec;
+
+    //-->Code for calculating COP
+    AnyRefFrame& ccBaseObj = Contact1.BaseObject;
+    
+    AnyVec3 ccForce1_Global = Contact1.Push.NormalForceVec + Contact1.Push.FrictionForceVec;
+    AnyVec3 ccForce2_Global = Contact2.Push.NormalForceVec + Contact2.Push.FrictionForceVec;
+    AnyVec3 ccForce3_Global = Contact3.Push.NormalForceVec + Contact3.Push.FrictionForceVec;
+    AnyVec3 ccForce4_Global = Contact4.Push.NormalForceVec + Contact4.Push.FrictionForceVec;
+    AnyVec3 ccForce5_Global = Contact5.Push.NormalForceVec + Contact5.Push.FrictionForceVec;
+    AnyVec3 ccForce6_Global = Contact6.Push.NormalForceVec + Contact6.Push.FrictionForceVec;
+    AnyVec3 ccForce7_Global = Contact7.Push.NormalForceVec + Contact7.Push.FrictionForceVec;
+    AnyVec3 ccForce8_Global = Contact8.Push.NormalForceVec + Contact8.Push.FrictionForceVec;
+    AnyVec3 ccForce9_Global = Contact9.Push.NormalForceVec + Contact9.Push.FrictionForceVec;
+    AnyVec3 ccForce10_Global = Contact10.Push.NormalForceVec + Contact10.Push.FrictionForceVec;
+    AnyVec3 ccForce11_Global = Contact11.Push.NormalForceVec + Contact11.Push.FrictionForceVec;
+    AnyVec3 ccForce12_Global = Contact12.Push.NormalForceVec + Contact12.Push.FrictionForceVec;
+
+    
+    
+    AnyVec3 ccForce1_Local= ccForce1_Global * ccBaseObj.Axes ;
+    AnyVec3 ccForce2_Local = ccForce2_Global * ccBaseObj.Axes;
+    AnyVec3 ccForce3_Local = ccForce3_Global * ccBaseObj.Axes;
+    AnyVec3 ccForce4_Local = ccForce4_Global * ccBaseObj.Axes;
+    AnyVec3 ccForce5_Local = ccForce5_Global * ccBaseObj.Axes;
+    AnyVec3 ccForce6_Local = ccForce6_Global * ccBaseObj.Axes;
+    AnyVec3 ccForce7_Local = ccForce7_Global * ccBaseObj.Axes;
+    AnyVec3 ccForce8_Local = ccForce8_Global * ccBaseObj.Axes;
+    AnyVec3 ccForce9_Local = ccForce9_Global * ccBaseObj.Axes; 
+    AnyVec3 ccForce10_Local = ccForce10_Global * ccBaseObj.Axes; 
+    AnyVec3 ccForce11_Local = ccForce11_Global * ccBaseObj.Axes; 
+    AnyVec3 ccForce12_Local = ccForce12_Global * ccBaseObj.Axes; 
+    
+    
+    AnyVec3 ccMomentArm1_Global = Contact1.TargetObject.r ;
+    AnyVec3 ccMomentArm2_Global = Contact2.TargetObject.r ;
+    AnyVec3 ccMomentArm3_Global = Contact3.TargetObject.r ;
+    AnyVec3 ccMomentArm4_Global = Contact4.TargetObject.r ;
+    AnyVec3 ccMomentArm5_Global = Contact5.TargetObject.r ;
+    AnyVec3 ccMomentArm6_Global = Contact6.TargetObject.r ;
+    AnyVec3 ccMomentArm7_Global = Contact7.TargetObject.r ;
+    AnyVec3 ccMomentArm8_Global = Contact8.TargetObject.r ;
+    AnyVec3 ccMomentArm9_Global = Contact9.TargetObject.r ;
+    AnyVec3 ccMomentArm10_Global = Contact10.TargetObject.r ;
+    AnyVec3 ccMomentArm11_Global = Contact11.TargetObject.r ;
+    AnyVec3 ccMomentArm12_Global = Contact12.TargetObject.r ;
+    
+
+    AnyVec3 ccMomentArm1_Local = (ccMomentArm1_Global - ccBaseObj.r) * ccBaseObj.Axes;
+    AnyVec3 ccMomentArm2_Local = (ccMomentArm2_Global - ccBaseObj.r) * ccBaseObj.Axes;
+    AnyVec3 ccMomentArm3_Local = (ccMomentArm3_Global - ccBaseObj.r) * ccBaseObj.Axes;
+    AnyVec3 ccMomentArm4_Local = (ccMomentArm4_Global - ccBaseObj.r) * ccBaseObj.Axes;
+    AnyVec3 ccMomentArm5_Local = (ccMomentArm5_Global - ccBaseObj.r) * ccBaseObj.Axes;
+    AnyVec3 ccMomentArm6_Local = (ccMomentArm6_Global - ccBaseObj.r) * ccBaseObj.Axes;
+    AnyVec3 ccMomentArm7_Local = (ccMomentArm7_Global - ccBaseObj.r) * ccBaseObj.Axes;
+    AnyVec3 ccMomentArm8_Local = (ccMomentArm8_Global - ccBaseObj.r) * ccBaseObj.Axes;
+    AnyVec3 ccMomentArm9_Local = (ccMomentArm9_Global - ccBaseObj.r) * ccBaseObj.Axes;
+    AnyVec3 ccMomentArm10_Local = (ccMomentArm10_Global - ccBaseObj.r) * ccBaseObj.Axes;
+    AnyVec3 ccMomentArm11_Local = (ccMomentArm11_Global - ccBaseObj.r) * ccBaseObj.Axes;
+    AnyVec3 ccMomentArm12_Local = (ccMomentArm12_Global - ccBaseObj.r) * ccBaseObj.Axes;
+    
+   
+    AnyVec3 ccForceLocalSum = ccForce1_Local + ccForce2_Local + ccForce3_Local + ccForce4_Local + ccForce5_Local +
+                              ccForce6_Local + ccForce7_Local + ccForce8_Local + ccForce9_Local + ccForce10_Local +
+                              ccForce11_Local+ccForce12_Local;
+                          
+    AnyVec3 ccMomentLocalSum = cross(ccForce1_Local, ccMomentArm1_Local) + cross(ccForce2_Local, ccMomentArm2_Local) + cross(ccForce3_Local, ccMomentArm3_Local) +
+                          cross(ccForce4_Local, ccMomentArm4_Local) + cross(ccForce5_Local, ccMomentArm5_Local) + cross(ccForce6_Local, ccMomentArm6_Local) +
+                          cross(ccForce7_Local, ccMomentArm7_Local) + cross(ccForce8_Local, ccMomentArm8_Local) + cross(ccForce9_Local, ccMomentArm9_Local) +
+                          cross(ccForce10_Local, ccMomentArm10_Local) + cross(ccForce11_Local, ccMomentArm11_Local) + cross(ccForce12_Local, ccMomentArm12_Local);
+                          
+    AnyVar Fx = ccForceLocalSum [0]; AnyVar Fy = ccForceLocalSum [1]; AnyVar Fz = ccForceLocalSum [2];
+    AnyVar Mx = ccMomentLocalSum [0]; AnyVar My = ccMomentLocalSum [1]; AnyVar Mz = ccMomentLocalSum [2]; 
+
+        
+    #if NormalDirectionParString == "X"
+     AnyVar Fxx =iffun(gtfun(  (Fx^2)^0.5,0),Fx,Fx+1000000);
+     AnyVar Rx = 0;
+     AnyVar Ry = Mz/Fxx;
+     AnyVar Rz = -My/Fxx;     
+    #endif
+    
+    #if NormalDirectionParString == "Y"
+     AnyVar Fyy =iffun(gtfun(  (Fy^2)^0.5,0),Fy,Fy+1000000);
+     AnyVar Rx = -Mz/Fyy;
+     AnyVar Ry = 0;
+     AnyVar Rz = Mx/Fyy;
+    #endif    
+
+    #if NormalDirectionParString == "Z"
+     AnyVar Fzz =iffun(gtfun(  (Fz^2)^0.5,0),Fz,Fz+1000000);
+     AnyVar Rx = My/Fzz;
+     AnyVar Ry = -Mx/Fzz;
+     AnyVar Rz = 0;
+    #endif
+    
+    AnyDrawLine GRF_line=
+    {
+        AnyRefFrame & ref = .ccBaseObj;
+        p0 = { .Rx, .Ry, .Rz};
+        p1 = p0 + 0.005 * .ccForceLocalSum  ;
+        Line.Thickness = 0.01;
+        Line.RGB = {1, 0, 0};
+        GlobalCoord=Off;
+    };
+      
+    AnyDrawVector GRF_point=
+    {
+        AnyRefFrame & ref = .ccBaseObj;
+        Vec = {.Rx, .Ry, .Rz};
+        GlobalCoord = Off;
+        PointAway = On;
+        DrawCoord = Off;
+        Line.Style=Line3DStyleFull;
+        Line.RGB = {0,1,1};
+        Line.Thickness = 0.000001;
+        
+        Line.End.Thickness = 2*0.015; 
+        Line.End.Length = 4*0.015;  
+        Line.End.Style=Line3DCapStyleEllipsoid;
+        //
+        Line.Start.Thickness = 0*0.015; 
+        Line.Start.Length = 0*0.015;  
+        Line.Start.Style=Line3DCapStyleEllipsoid;
+    };
+    //<--Code for calculationg COP
+  
+  
+  
+};
+  
+  
+  
+  
+  
+  

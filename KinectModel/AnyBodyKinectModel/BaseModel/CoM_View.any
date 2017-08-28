@@ -1,0 +1,45 @@
+AnyFolder Total_CoM =
+{
+    AnyKinCoM totalCoM=
+    {
+      AnyFolder& human = Main.Studies.HumanModel;
+    };
+    
+    AnySeg dummySeg =
+    {
+       Mass = 0;
+       Jii = {0, 0, 0};
+       AnyDrawNode drw = 
+       { 
+         ScaleXYZ={1,1,1}*0.02; 
+         RGB = {0, 0, 1};
+       };
+    };
+     
+    AnyKinEq rotCon =
+    {
+       AnyKinRotational rot=
+       {
+         AnyFixedRefFrame& ref = Main.Studies.InverseDynamicStudy.EnvironmentModel.GlobalRef;
+         AnySeg& ref2 = ..dummySeg;
+         Type = RotAxesAngles;
+       };
+    };
+    
+    AnyKinLinear lin=
+    {
+         AnyFixedRefFrame& ref = Main.Studies.InverseDynamicStudy.EnvironmentModel.GlobalRef;
+         AnySeg& ref2 = .dummySeg;
+    };
+    
+    AnyKinEq TotalCoM_Driver =
+    {
+        AnyKinMeasureLinComb lincomb =
+        {
+            AnyKinLinear &ref1 = ..lin;
+            AnyKinCoM &ref2 = ..totalCoM;
+            Coef={{1,0,0,-1,0,0},{0,1,0,0,-1,0},{0,0,1,0,0,-1}};
+            OutDim = 3;
+          };
+    };
+};

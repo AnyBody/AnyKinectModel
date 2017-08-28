@@ -1,0 +1,116 @@
+////DESCRIPTION OF MODEL
+// This model is base on the GaitLowerExtremity model in the examples folder
+// see the GaitLowerExtremity.main.any for a discription of how to use this model
+
+// Only include if this is the Main file.
+#define MotionAndParameterOptimizationModel 1
+#define InverseDynamicModel 0
+#define IntialPositionStudy 0
+#define AnimateOriginalBVHFile 1
+#define AnimateBVHData 1
+
+
+#include "PreMainIncludes.any"
+
+
+
+Main ={
+  
+  
+  
+  
+  #include "ModelSetup.any" 
+  #include "DrawSettings.any"
+  
+
+  AnyOperationMacro RunMotionAndParameterOptimizationSequence  = { 
+    MacroStr=({
+      "operation Main.Studies.KinematicStudy.Kinematics",
+      "run"
+    });
+  };
+
+  AnyOperationMacro SaveResults = { 
+    MacroStr={
+      "classoperation Main.Studies.KinematicStudy.Output" + " " + strquote("Save data") + " --file=" + strquote(FilePathCompleteOf(Main.ModelSetup.FileNames.KinResults )) + " --type=Deep"
+    };
+  };
+  
+  AnyOperationMacro LoadResults = { 
+    MacroStr={
+      "classoperation Main.Studies.KinematicStudy.Output" + " " + strquote("Load data") + " --file=" + strquote(FilePathCompleteOf(Main.ModelSetup.FileNames.KinResults )) 
+    };
+  };  
+  
+  
+  AnyFolder Studies ={
+    
+    HumanModel={
+      AnyFolder &Mannequin=.KinematicStudy.Mannequin;
+      #include  "BodyPartsSetupKin.any"
+    };
+    #include "HumanModel.any"
+        
+    AnyBodyStudy KinematicStudy = {
+      
+      AnyFolder &Model = Main.ModelSetup.MyModel;
+
+      #if AnimateOriginalBVHFile == 1
+        AnyFolder &BHVModel = Main.ModelSetup.InputData;
+      #endif      
+      //
+      //AnyFolder &Drivers = ..CalibrationDrivers;
+      AnyFolder HumanModel = {
+        AnyFolder &BodyModel=..HumanModel.BodyModel;  
+      };
+      AnyFolder &BodyModel=.HumanModel.BodyModel;  
+      
+      #include "Mannequin.any"  
+      
+      AnyFolder EnvironmentModel ={
+        AnyFolder &BodyModelRef=..HumanModel.BodyModel;        
+        #include "Environment.any"
+      };
+      
+      AnyFolder ModelEnvironmentConnection = {
+        AnyFolder Drivers={
+          AnyFolder &JntPos=..Mannequin.Posture;  
+          AnyFolder &JntVel=..Mannequin.PostureVel;
+          #include "ExtraDrivers.any"
+        };
+      };
+      
+      #include "JointAngleOutputs.any"
+      #include "UndefineBodyPartSetup.any"
+      InitialConditions.PosAnalysisOnlyOnOff=On;
+      Kinematics.PosAnalysisOnlyOnOff=On; //only run the position analysis 
+      nStep = Main.ModelSetup.nStep; 
+      Gravity = { 0.0, -9.81, 0.0};
+      tStart = Main.ModelSetup.tStart; 
+      tEnd = Main.ModelSetup.tEnd; 
+      
+      InitialConditions.SolverType = KinSolOverDeterminate;
+      Kinematics.SolverType = KinSolOverDeterminate;
+      InitialConditions.KinematicTol=5e-4;
+      Kinematics.KinematicTol=5e-4; 
+            
+    };
+    
+    
+    
+    
+    
+    
+    
+    
+  };
+  
+  
+};
+
+
+#undef MotionAndParameterOptimizationModel 
+#undef InverseDynamicModel 
+#undef IntialPositionStudy 
+
+

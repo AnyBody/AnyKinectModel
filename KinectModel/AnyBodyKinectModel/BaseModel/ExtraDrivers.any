@@ -1,0 +1,560 @@
+        
+
+ AnyKinEqSimpleDriver NeckDrv={
+            AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Trunk.NeckJoint; 
+            DriverPos={0};DriverVel={0}; Reaction.Type={Off};
+          }; 
+          
+          
+          
+          AnyKinEqSimpleDriver LeftEversionBrace={
+            AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Left.SubTalarEversion; 
+            DriverPos={0};
+            DriverVel={0};
+            Reaction.Type={On};
+          };
+
+          AnyKinEqSimpleDriver RightEversionBrace={
+            AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Right.SubTalarEversion; 
+            DriverPos={0};
+            DriverVel={0};
+            Reaction.Type={On};
+          };
+
+
+
+
+
+//AnyKinEq RightSternoClavicularProtraction = {
+//  AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Right.SternoClavicularProtraction; 
+//  Reaction.Type={On};
+//};
+
+
+//AnyKinEq RightSternoClavicularElevation = {
+//  AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Right.SternoClavicularElevation; 
+//  Reaction.Type={On};
+//};
+//
+//AnyKinEq RightSternoClavicularAxialRotation = {
+//  AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Right.SternoClavicularAxialRotation; 
+//  Reaction.Type={On};
+//};
+
+//AnyKinEq RightElbowPronation={
+//  AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Right.ElbowPronation; 
+//  Reaction.Type={On};
+//};
+
+
+//AnyKinEq RightWristFlexion={
+//  AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Right.WristFlexion; 
+//  Reaction.Type={On};
+//};
+//
+//AnyKinEq RightWristAbduction={
+//  AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Right.WristAbduction; 
+//  Reaction.Type={On};
+//};
+
+//
+//AnyKinEq LeftSternoClavicularProtraction = {
+//  AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Left.SternoClavicularProtraction; 
+//  Reaction.Type={On};
+//};
+
+
+//AnyKinEq LeftSternoClavicularElevation = {
+//  AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Left.SternoClavicularElevation; 
+//  Reaction.Type={On};
+//};
+//
+//AnyKinEq LeftSternoClavicularAxialRotation = {
+//  AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Left.SternoClavicularAxialRotation; 
+//  Reaction.Type={On};
+//};
+
+//AnyKinEq LeftElbowPronation={
+//  AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Left.ElbowPronation; 
+//  Reaction.Type={On};
+//};
+
+//AnyKinEq LeftWristFlexion={
+//  AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Left.WristFlexion; 
+//  Reaction.Type={On};
+//};
+//
+//AnyKinEq LeftWristAbduction={
+//  AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Left.WristAbduction; 
+//  Reaction.Type={On};
+//};
+
+
+//#if LEGS_INCLUDED == 1
+//
+//AnyKinEq RightEversion={
+//  AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Right.SubTalarEversion; 
+//  Reaction.Type={On};
+//};
+//
+//AnyKinEq RightPlantarFlexion={
+//  AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Right.AnklePlantarFlexion; 
+//  Reaction.Type={On};
+//};
+//
+//
+//AnyKinEq LeftEversion ={
+//  AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Left.SubTalarEversion; 
+//  Reaction.Type={On};
+//};
+//
+//AnyKinEq LeftPlantarFlexion={
+//  AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Left.AnklePlantarFlexion; 
+//  Reaction.Type={On};
+//};
+//
+//#endif
+
+
+// new driver drived by the point of artificial segment
+
+
+// HeadDriver in BVH file is the head start point, in anybody i find the drive piont selv
+AnyKinEq HeadDriver = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.Head.Seg;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Trunk.SegmentsThorax.ThoraxSeg.NeckDriveNode;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+AnyKinEq NeckDriver = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.Neck.Seg; 
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Trunk.SegmentsThorax.ThoraxSeg.ClavicleDriveNode;
+   #include "DrawDrivers.any"   
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+AnyKinEq ThoroxDriver = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.Chest3.Seg;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Trunk.SegmentsThorax.ThoraxSeg.ThoraxDriveNode;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+AnyKinEq ThoroxDriver2 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.Chest2.Seg;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Trunk.SegmentsThorax.ThoraxSeg.ThoraxDriveNode2;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+AnyKinEq ThoroxDriver3 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.Chest.Seg;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Trunk.SegmentsThorax.ThoraxSeg.ThoraxDriveNode3;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+
+
+// the Hips is the globle zero at BVH file and Pelvis is near to it. 
+AnyKinEq PelvisDriver = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.Hips.Seg;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Trunk.SegmentsLumbar.PelvisSeg.PelvisNodes;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+
+AnyKinEq LeftHipDriver = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.LeftHip.Seg;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Trunk.SegmentsLumbar.PelvisSeg.LeftHipDriveNode;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+AnyKinEq RightHipDriver = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.RightHip.Seg;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Trunk.SegmentsLumbar.PelvisSeg.RightHipDriveNode;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+
+AnyKinEq LeftShoulderDriver = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 =  Main.ModelSetup.MyModel.LeftShoulder.Seg;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Trunk.SegmentsThorax.ThoraxSeg.LeftShoulderDriveNode;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+AnyKinEq RightShoulderDriver = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 =  Main.ModelSetup.MyModel.RightShoulder.Seg;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Trunk.SegmentsThorax.ThoraxSeg.RightShoulderDriveNode;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+
+//AnyKinEq LeftElbowDriver = {
+// AnyKinLinear lin = {
+//   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.LeftElbow.Seg;
+//   AnyRefFrame &ref2 =Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Humerus.fe;
+// };
+// CType = {Soft,Soft,Soft}; 
+//};
+//
+//
+//
+//AnyKinEq RightElbowDriver = {
+// AnyKinLinear lin = {
+//   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.RightElbow.Seg;
+//   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Humerus.fe;
+// };
+// CType = {Soft,Soft,Soft}; 
+//};
+
+
+// Extra Point Driver
+
+
+AnyKinEq LeftElbowExtraArmDriver1 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.LeftElbow.Seg.LeftElbowExtraDriveNode1;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Humerus.LeftElbowExtraDriveNode1;
+   #include "DrawDrivers.any" 
+
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+AnyKinEq LeftElbowExtraArmDriver2 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.LeftElbow.Seg.LeftElbowExtraDriveNode2;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Humerus.LeftElbowExtraDriveNode2;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+
+AnyKinEq RightElbowExtraArmDriver1 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.RightElbow.Seg.RightElbowExtraDriveNode1;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Humerus.RightElbowExtraDriveNode1;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+AnyKinEq RightElbowExtraArmDriver2 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.RightElbow.Seg.RightElbowExtraDriveNode2;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Humerus.RightElbowExtraDriveNode2;
+   #include "DrawDrivers.any" 
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+
+//AnyKinEq LeftWristDriver = {
+// AnyKinLinear lin = {
+//   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.LeftWrist.Seg;
+//   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Radius.wj;
+// };
+// CType = {Soft,Soft,Soft}; 
+//};
+//
+//
+//AnyKinEq RightWristDriver = {
+// AnyKinLinear lin = {
+//   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.RightWrist.Seg;
+//   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Radius.wj;
+// };
+// CType = {Soft,Soft,Soft}; 
+//};
+
+AnyKinEq RightWristExtraDriver1 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.RightWrist.Seg.RightWristExtraDriveNode1;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Radius.RightWristExtraDriveNode1;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+AnyKinEq RightWristExtraDriver2 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.RightWrist.Seg.RightWristExtraDriveNode2;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Radius.RightWristExtraDriveNode2;
+   #include "DrawDrivers.any" 
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+
+AnyKinEq LeftWristExtraDriver1 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.LeftWrist.Seg.LeftWristExtraDriveNode1;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Radius.LeftWristExtraDriveNode1;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+AnyKinEq LeftWristExtraDriver2 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.LeftWrist.Seg.LeftWristExtraDriveNode2;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Radius.LeftWristExtraDriveNode2;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+
+
+AnyKinEq RightHandDriver1 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.RightFinger1.Seg;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Hand.RightHandDriveNode1;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+AnyKinEq RightHandDriver2 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.RightFinger4.Seg; 
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Hand.RightHandDriveNode2;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+AnyKinEq LeftHandDriver1 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.LeftFinger1.Seg;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Hand.LeftHandDriveNode1;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+AnyKinEq LeftHandDriver2 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.LeftFinger4.Seg;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Hand.LeftHandDriveNode2;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+
+
+
+
+
+
+
+#if LEGS_INCLUDED == 1
+
+//AnyKinEq LeftKneeDriver = {
+// AnyKinLinear lin = {
+//   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.LeftKnee.Seg;
+//   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Thigh.KneeJoint;
+// };
+// CType = {Soft,Soft,Soft}; 
+//};
+//
+//
+//AnyKinEq RightKneeDriver = {
+// AnyKinLinear lin = {
+//   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.RightKnee.Seg;
+//   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Thigh.KneeJoint;
+//
+// };
+// CType = {Soft,Soft,Soft}; 
+//};
+
+//
+//AnyKinEq LeftAnkelDriver = {
+// AnyKinLinear lin = {
+//   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.LeftAnkle.Seg;
+//   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Shank.LeftAnkleDriveNode;
+// };
+// CType = {Soft,Soft,Soft}; 
+//};
+//
+//
+//AnyKinEq RightAnkelDriver = {
+// AnyKinLinear lin = {
+//   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.RightAnkle.Seg;
+//   AnyRefFrame &ref2 =Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Shank.RightAnkleDriveNode;
+// };
+// CType = {Soft,Soft,Soft}; 
+//};
+
+
+AnyKinEq LeftFootDriver = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Foot.LeftFootDriveNode;
+   AnyRefFrame &ref2 = Main.ModelSetup.MyModel.LeftToe.Seg;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+AnyKinEq RightFootDriver = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Foot.RightFootDriveNode;
+   AnyRefFrame &ref2 =Main.ModelSetup.MyModel.RightToe.Seg;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+
+
+
+AnyKinEq LeftKneeExtraDriver1 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.LeftKnee.Seg.LeftKneeExtraDriveNode1;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Patella.LeftKneeExtraDriveNode1;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+AnyKinEq LeftKneeExtraDriver2 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.LeftKnee.Seg.LeftKneeExtraDriveNode2;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Patella.LeftKneeExtraDriveNode2;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+
+AnyKinEq RightKneeExtraDriver1 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.RightKnee.Seg.RightKneeExtraDriveNode1;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Patella.RightKneeExtraDriveNode1;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+AnyKinEq RightKneeExtraDriver2 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.RightKnee.Seg.RightKneeExtraDriveNode2;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Patella.RightKneeExtraDriveNode2;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+
+
+AnyKinEq LeftAnkleExtraDriver1 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.LeftAnkle.Seg.LeftAnkleExtraDriveNode1;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Shank.LeftAnkleExtraDriveNode1;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+AnyKinEq LeftAnkleExtraDriver2 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.LeftAnkle.Seg.LeftAnkleExtraDriveNode2;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Shank.LeftAnkleExtraDriveNode2;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+AnyKinEq RightAnkleExtraDriver1 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.RightAnkle.Seg.RightAnkleExtraDriveNode1;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Shank.RightAnkleExtraDriveNode1;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+AnyKinEq RightAnkleExtraDriver2 = {
+ AnyKinLinear lin = {
+   AnyRefFrame &ref1 = Main.ModelSetup.MyModel.RightAnkle.Seg.RightAnkleExtraDriveNode2;
+   AnyRefFrame &ref2 = Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Shank.RightAnkleExtraDriveNode2;
+   #include "DrawDrivers.any"
+ };
+ CType = {Soft,Soft,Soft}; 
+};
+
+
+
+
+#endif
+
+
+
+
+
+
+
+
+
+
+
+
+//          AnyKinEqSimpleDriver LefEversionBrace={
+//            AnyKinMeasureOrg &ref1= ...HumanModel.BodyModel.Interface.Left.SubTalarEversion; 
+//            DriverPos={0};
+//            DriverVel={0};
+//            Reaction.Type={On};
+//          };

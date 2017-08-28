@@ -1,0 +1,3 @@
+AnyDrawNode drw2 = {RGB={1,0,0};
+  ScaleXYZ=0.01*{1,1,1};
+};  

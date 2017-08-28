@@ -1,0 +1,124 @@
+AnyProjectTaskFolder Switch_Trial = { 
+  AnyProjectTaskFolder Michael_error = { 
+    AnyProjectTaskFolder gait1_error = { 
+      AnyProjectTaskLoadModel  InverseDynamics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\gait1\InverseDynamics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\gait1\InverseDynamics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\gait1\output_log.txt";
+      };
+      AnyProjectTaskLoadModel  Kinematics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\gait1\Kinematics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\gait1\Kinematics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\gait1\output_log.txt";
+      };
+    };
+    AnyProjectTaskFolder gait2_error = { 
+      AnyProjectTaskLoadModel  InverseDynamics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\gait2\InverseDynamics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\gait2\InverseDynamics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\gait2\output_log.txt";
+      };
+      AnyProjectTaskLoadModel  Kinematics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\gait2\Kinematics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\gait2\Kinematics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\gait2\output_log.txt";
+      };
+    };
+    AnyProjectTaskFolder gait3_error = { 
+      AnyProjectTaskLoadModel  InverseDynamics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\gait3\InverseDynamics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\gait3\InverseDynamics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\gait3\output_log.txt";
+      };
+      AnyProjectTaskLoadModel  Kinematics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\gait3\Kinematics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\gait3\Kinematics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\gait3\output_log.txt";
+      };
+    };
+    AnyProjectTaskFolder jump1_error = { 
+      AnyProjectTaskLoadModel  InverseDynamics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\jump1\InverseDynamics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\jump1\InverseDynamics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\jump1\output_log.txt";
+      };
+      AnyProjectTaskLoadModel  Kinematics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\jump1\Kinematics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\jump1\Kinematics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\jump1\output_log.txt";
+      };
+    };
+    AnyProjectTaskFolder jump2 = { 
+      AnyProjectTaskLoadModel  InverseDynamics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\jump2\InverseDynamics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\jump2\InverseDynamics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\jump2\output_log.txt";
+      };
+      AnyProjectTaskLoadModel  Kinematics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\jump2\Kinematics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\jump2\Kinematics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\jump2\output_log.txt";
+      };
+    };
+    AnyProjectTaskFolder lefttoright1 = { 
+      AnyProjectTaskLoadModel  InverseDynamics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\lefttoright1\InverseDynamics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\lefttoright1\InverseDynamics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\lefttoright1\output_log.txt";
+      };
+      AnyProjectTaskLoadModel  Kinematics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\lefttoright1\Kinematics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\lefttoright1\Kinematics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\lefttoright1\output_log.txt";
+      };
+    };
+    AnyProjectTaskFolder lefttoright2 = { 
+      AnyProjectTaskLoadModel  InverseDynamics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\lefttoright2\InverseDynamics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\lefttoright2\InverseDynamics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\lefttoright2\output_log.txt";
+      };
+      AnyProjectTaskLoadModel  Kinematics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\lefttoright2\Kinematics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\lefttoright2\Kinematics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\lefttoright2\output_log.txt";
+      };
+    };
+    AnyProjectTaskFolder taichi1_error = { 
+      AnyProjectTaskLoadModel  InverseDynamics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\taichi1\InverseDynamics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\taichi1\InverseDynamics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\taichi1\output_log.txt";
+      };
+      AnyProjectTaskLoadModel  Kinematics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\taichi1\Kinematics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\taichi1\Kinematics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\taichi1\output_log.txt";
+      };
+    };
+    AnyProjectTaskFolder taichi2_error = { 
+      AnyProjectTaskLoadModel  InverseDynamics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\taichi2\InverseDynamics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\taichi2\InverseDynamics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\taichi2\output_log.txt";
+      };
+      AnyProjectTaskLoadModel  Kinematics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\taichi2\Kinematics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\taichi2\Kinematics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\taichi2\output_log.txt";
+      };
+    };
+    AnyProjectTaskFolder twolegsquat2_error = { 
+      AnyProjectTaskLoadModel  InverseDynamics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\twolegsquat2\InverseDynamics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\twolegsquat2\InverseDynamics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\twolegsquat2\output_log.txt";
+      };
+      AnyProjectTaskLoadModel  Kinematics= { 
+        AnyFile mf = PROJECT_PATH+"\Subjects\"+"Michael\twolegsquat2\Kinematics.main.any";
+        MainFile = PROJECT_PATH+"\Subjects\"+"Michael\twolegsquat2\Kinematics.main.any";
+        Description.Files = PROJECT_PATH+"\Subjects\"+"Michael\twolegsquat2\output_log.txt";
+      };
+    };
+  };
+};

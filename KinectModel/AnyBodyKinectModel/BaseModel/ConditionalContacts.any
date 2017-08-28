@@ -1,0 +1,209 @@
+////**************************** CONDITIONAL CONTACTS ****************************//// 
+AnyFolder ConditionalContacts = {
+
+  AnyFolder ContactGround = {
+    AnyVar LimitDistLow = -0.05;
+    AnyVar LimitDistHigh = 0.05;
+    AnyVar LimitVelHigh = 1.2;
+    AnyVar Radius = 5.0;
+    AnyVar Strength = 50000;
+    AnyVar FrictionCoefficient = 0.5;
+    AnyVar ScaleFactor = 1;
+    //AnyIntArray Direction = {1,0,2};
+    AnyIntArray Direction = {2,0,1};
+    
+    #define ForcePlateDirectionNormal Z 
+    #define NormalDirectionParStringIn "Z"
+    
+    #define ForcePlateDirectionFriction1 X 
+    #define ForcePlateDirectionFriction2 Y
+    
+    
+    
+    AnyVar ForceVectorDrawScaleFactor = 0.005;
+    
+    //#define CC_NORMAL_DIRECTION "Z"
+
+    //AnyRefFrame& FirstGround = ...EnvironmentModel.GroundRef.Ground1;
+    AnyRefFrame& FirstForcePlate = ...EnvironmentModel.GroundRef.ForcePlate1;
+    AnyRefFrame& SecondForcePlate = ...EnvironmentModel.GroundRef.ForcePlate2;
+//    AnyRefFrame& ThirdForcePlate = ...EnvironmentModel.GroundRef.ForcePlate3;
+    //AnyRefFrame& SecondGround = ...EnvironmentModel.GroundRef.Ground2;
+  
+    FirstForcePlate =
+    {  
+        AnyRefNode upperNode=
+        {
+           //ARel = RotMat(-90*pi/180, x);
+           AnySurfCylinder upperCyl =
+           {            
+               Radius = ...Radius;
+               Length = ...LimitDistHigh;
+               CapRatio = 0;
+               AnyDrawParamSurf drv = 
+               {
+                   RGB = {0.8, 0.8, 0.8};
+                   Opacity = 0.2;
+               };
+           };  
+        };
+        AnyRefNode lowerNode =
+        {
+            ARel = RotMat(180*pi/180, x);
+            AnySurfCylinder lowerCyl =
+            {
+                Radius = ...Radius;
+                Length = -(...LimitDistLow);
+                CapRatio = 0;
+                AnyDrawParamSurf drv = 
+                {
+                    RGB = {0.8, 0.8, 0.8};
+                    Opacity = 0.2;
+                };
+            };
+        };
+    };
+  
+    SecondForcePlate =
+    {
+        AnyRefNode upperNode=
+        {
+           //ARel = RotMat(-90*pi/180, x);
+           AnySurfCylinder upperCyl =
+           {            
+               Radius = ...Radius;
+               Length = ...LimitDistHigh;
+               CapRatio = 0;
+               AnyDrawParamSurf drv = 
+               {
+                   RGB = {0.8, 0.8, 0.8};
+                   Opacity = 0.2;
+               };
+           };  
+        };
+        AnyRefNode lowerNode =
+        {
+            ARel = RotMat(180*pi/180, x);
+            AnySurfCylinder lowerCyl =
+            {
+                Radius = ...Radius;
+                Length = -(...LimitDistLow);
+                CapRatio = 0;
+                AnyDrawParamSurf drv = 
+                {
+                    RGB = {0.8, 0.8, 0.8};
+                    Opacity = 0.2;
+                };
+            };
+        };
+    };
+    
+//    ThirdForcePlate =
+//    {
+//        AnyRefNode upperNode=
+//        {
+//           //ARel = RotMat(-90*pi/180, x);
+//           AnySurfCylinder upperCyl =
+//           {            
+//               Radius = ...Radius;
+//               Length = ...LimitHigh;
+//               CapRatio = 0;
+//               AnyDrawParamSurf drv = 
+//               {
+//                   RGB = {0.8, 0.8, 0.8};
+//                   Opacity = 0.2;
+//               };
+//           };  
+//        };
+//        AnyRefNode lowerNode =
+//        {
+//            ARel = RotMat(180*pi/180, x);
+//            AnySurfCylinder lowerCyl =
+//            {
+//                Radius = ...Radius;
+//                Length = -(...LimitLow);
+//                CapRatio = 0;
+//                AnyDrawParamSurf drv = 
+//                {
+//                    RGB = {0.8, 0.8, 0.8};
+//                    Opacity = 0.2;
+//                };
+//            };
+//        };
+//      };  
+//    
+    };
+  
+  
+////    ****************** 1. First Gound ******************//   
+AnyFolder FirstPlate_Foot=
+{ 
+
+    FootPlateConditionalContact RightFoot (
+    BaseObjectPara = .....EnvironmentModel.GroundRef.ForcePlate1,
+    TargetObject1= ....SWHumanRefNodes.refRightFoot.SWRightFootToe1,
+    TargetObject2= ....SWHumanRefNodes.refRightFoot.SWRightFootToe2,
+    TargetObject3= ....SWHumanRefNodes.refRightFoot.SWRightFootToe3,
+    TargetObject4= ....SWHumanRefNodes.refRightFoot.SWRightFootMedial1,
+    TargetObject5= ....SWHumanRefNodes.refRightFoot.SWRightFootMedial2,
+    TargetObject6= ....SWHumanRefNodes.refRightFoot.SWRightFootMedial3,
+    TargetObject7= ....SWHumanRefNodes.refRightFoot.SWRightFootMedial4,
+    TargetObject8= ....SWHumanRefNodes.refRightFoot.SWRightFootMedial5,
+    TargetObject9= ....SWHumanRefNodes.refRightFoot.ScalingNode.SWRightFootMedial6,
+    TargetObject10= ....SWHumanRefNodes.refRightFoot.ScalingNode.SWRightFootMedial7,
+    TargetObject11= ....SWHumanRefNodes.refRightFoot.ScalingNode.SWRightFootMedial8,    
+    TargetObject12= ....SWHumanRefNodes.refRightFoot.SWRightFootHeel,
+    DisplayTriggerVolumePara =0,
+    DisplayTargetNodePara =1,
+    UserDefinedDistLimitLowPara =...ContactGround.LimitDistLow,
+    UserDefinedDistLimitHighPara = ...ContactGround.LimitDistHigh,
+    UserDefinedRadiusLimitPara = ...ContactGround.Radius,
+    UserDefinedVelLimitHighPara = ...ContactGround.LimitVelHigh,
+    StrengthPara = 1000,
+    StaticFrictionCoefficientPara = ...ContactGround.FrictionCoefficient,
+    NormalDirectionPara =ForcePlateDirectionNormal,
+    FrictionDirection1Para = ForcePlateDirectionFriction1,
+    FrictionDirection2Para = ForcePlateDirectionFriction2,
+    NormalDirectionParString = NormalDirectionParStringIn
+    ) = {};
+    
+
+  }; 
+  
+  
+  
+  AnyFolder SecondPlate_Foot=
+{ 
+
+    FootPlateConditionalContact LeftFoot (
+    BaseObjectPara = .....EnvironmentModel.GroundRef.ForcePlate2,
+    TargetObject1= ....SWHumanRefNodes.refLeftFoot.SWLeftFootToe1,
+    TargetObject2= ....SWHumanRefNodes.refLeftFoot.SWLeftFootToe2,
+    TargetObject3= ....SWHumanRefNodes.refLeftFoot.SWLeftFootToe3,
+    TargetObject4= ....SWHumanRefNodes.refLeftFoot.SWLeftFootMedial1,
+    TargetObject5= ....SWHumanRefNodes.refLeftFoot.SWLeftFootMedial2,
+    TargetObject6= ....SWHumanRefNodes.refLeftFoot.SWLeftFootMedial3,
+    TargetObject7= ....SWHumanRefNodes.refLeftFoot.SWLeftFootMedial4,
+    TargetObject8= ....SWHumanRefNodes.refLeftFoot.SWLeftFootMedial5,
+    TargetObject9= ....SWHumanRefNodes.refLeftFoot.ScalingNode.SWLeftFootMedial6,
+    TargetObject10= ....SWHumanRefNodes.refLeftFoot.ScalingNode.SWLeftFootMedial7,
+    TargetObject11= ....SWHumanRefNodes.refLeftFoot.ScalingNode.SWLeftFootMedial8,    
+    TargetObject12= ....SWHumanRefNodes.refLeftFoot.SWLeftFootHeel,
+    DisplayTriggerVolumePara =1,
+    DisplayTargetNodePara =1,
+    UserDefinedDistLimitLowPara =...ContactGround.LimitDistLow,
+    UserDefinedDistLimitHighPara = ...ContactGround.LimitDistHigh,
+    UserDefinedRadiusLimitPara = ...ContactGround.Radius,
+    UserDefinedVelLimitHighPara = ...ContactGround.LimitVelHigh,
+    StrengthPara = 1000,
+    StaticFrictionCoefficientPara = ...ContactGround.FrictionCoefficient,
+    NormalDirectionPara = ForcePlateDirectionNormal,
+    FrictionDirection1Para = ForcePlateDirectionFriction1,
+    FrictionDirection2Para = ForcePlateDirectionFriction2,
+    NormalDirectionParString = NormalDirectionParStringIn    
+    ) = {};
+  }; 
+  
+};
+  
+

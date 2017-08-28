@@ -1,0 +1,12 @@
+AnyKinPLine line = {
+  AnyRefFrame &n1 = .ref1;
+  AnyRefFrame &n2 = .ref2;
+  AnyDrawPLine drw = 
+  {
+    //Visible = On;
+    //Opacity = 1;
+    Thickness = 0.01;
+    RGB = {1,0,0};
+  };
+
+};

@@ -1,0 +1,1130 @@
+//This file contains the marker toplogy of the data set it links free floating markers with the markers on the human 
+
+AnyFolder ModelSetup ={
+ 
+   AnyInputBVH InputData = {
+
+    //AnyStringVar Dir ="";
+    
+    FileName = TRIAL_PATH+Main.TrialSpecificData.TrialName + ".bvh";
+
+    //ModelDrawRGBs={{0.5,0.5,0.5},{0.2,0.1,0.3},{1,1,1}};
+
+    //ModelDrawOnOff = On;
+
+    //ModelDrawScale = 0.1;
+
+    ConstructModelOnOff = On;
+    
+    TranslationScale = BvhScale; //taken from the CMU webpage converts the asf/amc files into meters
+
+    RotationScale = pi/180.0;
+    TranslationalDataFilterIndex = 0;
+    RotationalDataFilterIndex = -1;
+    AnyFloat BvhScale = 1/100;
+
+   // Filter = {
+   //   Fc = {10};
+   // };
+    
+  };
+  
+  
+  AnyFolder MyModel = { 
+    
+ 
+  AnyString FilePath = TRIAL_PATH+"/"+Main.TrialSpecificData.TrialName +"/";
+
+  #if InverseDynamicModel == 0
+   CreateAndDriveSegment Hips (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,
+   Name = "Hips"
+   ) = {};
+   
+   
+
+   CreateAndDriveSegment Chest (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "Chest"
+   ) = {}; 
+   
+   
+   
+  CreateAndDriveSegment Chest2 (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "Chest2"
+   ) = {}; 
+    
+
+   CreateAndDriveSegment Chest3 (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "Chest3"
+   ) = {};
+
+
+   CreateAndDriveSegment Neck (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "Neck"
+   ) = {}; 
+   
+   CreateAndDriveSegment Head (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "Head"
+   ) = {}; 
+   
+   CreateAndDriveSegment LeftCollar (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "LeftCollar"
+   ) = {}; 
+   
+   CreateAndDriveSegment LeftShoulder (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "LeftShoulder"
+   ) = {};
+   
+   CreateAndDriveSegment LeftElbow (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "LeftElbow"
+   ) = {};
+   
+   CreateAndDriveSegment LeftWrist (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "LeftWrist"
+   ) = {};
+   
+   CreateAndDriveSegment LeftFinger1 (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "LeftFinger1"
+   ) = {};
+   
+   CreateAndDriveSegment LeftFinger4 (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "LeftFinger4"
+   ) = {};
+   
+   CreateAndDriveSegment RightCollar (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "RightCollar"
+   ) = {}; 
+   
+   CreateAndDriveSegment RightShoulder (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "RightShoulder"
+   ) = {};
+   
+   CreateAndDriveSegment RightElbow (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "RightElbow"
+   ) = {};
+   
+   CreateAndDriveSegment RightWrist (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "RightWrist"
+   ) = {};
+   
+   CreateAndDriveSegment RightFinger1 (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "RightFinger1"
+   ) = {};
+   
+   CreateAndDriveSegment RightFinger4 (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "RightFinger4"
+   ) = {};
+   
+   CreateAndDriveSegment RightHip (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "RightHip"
+   ) = {};
+   
+   CreateAndDriveSegment RightKnee (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "RightKnee"
+   ) = {};
+   
+   CreateAndDriveSegment RightAnkle (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "RightAnkle"
+   ) = {};
+   
+   CreateAndDriveSegment RightToe (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "RightToe"
+   ) = {};
+   
+   CreateAndDriveSegment LeftHip (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "LeftHip"
+   ) = {};
+   
+   CreateAndDriveSegment LeftKnee (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "LeftKnee"
+   ) = {};
+   
+   CreateAndDriveSegment LeftAnkle (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "LeftAnkle"
+   ) = {};
+   
+   CreateAndDriveSegment LeftToe (
+   FilePath = ..FilePath,
+   AnimateData = AnimateBVHData,   
+   Name = "LeftToe"
+   ) = {};
+   
+   #endif
+//   
+//  CreateAndDriveSegment Head (
+//   FileNameInX = TRIAL_PATH+"HeadX.txt",
+//   FileNameInY = TRIAL_PATH+"HeadY.txt",
+//   FileNameInZ = TRIAL_PATH+"HeadZ.txt"
+//   
+//   ) = {};
+
+
+  
+     
+   AnyFolder LengthComputations = {
+     
+    AnyVar TrunkHeight = (Main.ModelSetup.InputData.Data.Hips.Chest.OFFSET[1]+Main.ModelSetup.InputData.Data.Hips.Chest.Chest2.OFFSET[1]+Main.ModelSetup.InputData.Data.Hips.Chest.Chest2.Chest3.OFFSET[1]+Main.ModelSetup.InputData.Data.Hips.Chest.Chest2.Chest3.Neck.OFFSET[1]+Main.ModelSetup.InputData.Data.Hips.Chest.Chest2.Chest3.Neck.Head.OFFSET[1])/100;
+    
+    
+    AnyVar UpperArmLength = (vnorm(Main.ModelSetup.InputData.Data.Hips.Chest.Chest2.Chest3.RightCollar.RightShoulder.RightElbow.OFFSET)+vnorm(Main.ModelSetup.InputData.Data.Hips.Chest.Chest2.Chest3.LeftCollar.LeftShoulder.LeftElbow.OFFSET))/2/100;
+    AnyVar ForeArmLength =  (vnorm(Main.ModelSetup.InputData.Data.Hips.Chest.Chest2.Chest3.RightCollar.RightShoulder.RightElbow.RightWrist.OFFSET)+vnorm(Main.ModelSetup.InputData.Data.Hips.Chest.Chest2.Chest3.LeftCollar.LeftShoulder.LeftElbow.LeftWrist.OFFSET))/2/100;
+    
+    //AnyVar HeadLength = vnorm(Main.ModelSetup.InputData.InputData.Data.Hips.Chest.Chest2.Chest3.Neck.Head.End Site.OFFSET);
+        
+    
+    AnyVar HandLength = (vnorm(Main.ModelSetup.InputData.Data.Hips.Chest.Chest2.Chest3.LeftCollar.LeftShoulder.LeftElbow.LeftWrist.LeftFinger2.OFFSET)+vnorm (Main.ModelSetup.InputData.Data.Hips.Chest.Chest2.Chest3.LeftCollar.LeftShoulder.LeftElbow.LeftWrist.LeftFinger2.LeftFinger21.OFFSET)+vnorm (Main.ModelSetup.InputData.Data.Hips.Chest.Chest2.Chest3.LeftCollar.LeftShoulder.LeftElbow.LeftWrist.LeftFinger2.LeftFinger21.LeftFinger22.OFFSET))/100;
+    
+    //Calculation of PevisWidth from local to globle one
+    AnyMatrix  AngleMatrixLPelvis = RotMat(...ModelSetup.InputData.Data.Hips.LeftHip.Motion[0][0],x)*RotMat(...ModelSetup.InputData.Data.Hips.LeftHip.Motion[1][0],y)*RotMat(...ModelSetup.InputData.Data.Hips.LeftHip.Motion[2][0],z);
+    AnyVec3 LeftHipGloble = (AngleMatrixLPelvis*(...ModelSetup.InputData.Data.Hips.LeftHip.OFFSET)')';
+    
+    AnyMatrix  AngleMatrixRPelvis = RotMat(...ModelSetup.InputData.Data.Hips.RightHip.Motion[0][0],x)*RotMat(...ModelSetup.InputData.Data.Hips.RightHip.Motion[1][0],y)*RotMat(...ModelSetup.InputData.Data.Hips.RightHip.Motion[2][0],z);
+    AnyVec3 RightHipGloble = (AngleMatrixLPelvis*(...ModelSetup.InputData.Data.Hips.RightHip.OFFSET)')';
+    
+    AnyVar PelvisWidth = vnorm (RightHipGloble-LeftHipGloble,2)/100;
+    
+    
+    //AnyVar PelvisWidth = vnorm(Main.ModelSetup.InputData.Data.Hips.RightHip.OFFSET-Main.ModelSetup.InputData.Data.Hips.LeftHip.OFFSET,2)/100;
+    
+     
+    #if LEGS_INCLUDED == 1
+     
+
+    
+    AnyVar ThighLength = (vnorm(Main.ModelSetup.InputData.Data.Hips.RightHip.RightKnee.OFFSET)+vnorm(Main.ModelSetup.InputData.Data.Hips.LeftHip.LeftKnee.OFFSET))/2/100;
+    AnyVar ShankLength = (vnorm(Main.ModelSetup.InputData.Data.Hips.RightHip.RightKnee.RightAnkle.OFFSET)+vnorm(Main.ModelSetup.InputData.Data.Hips.LeftHip.LeftKnee.LeftAnkle.OFFSET))/2/100;
+    AnyVar FootLength = (vnorm(Main.ModelSetup.InputData.Data.Hips.RightHip.RightKnee.RightAnkle.RightToe.OFFSET)+vnorm(Main.ModelSetup.InputData.Data.Hips.LeftHip.LeftKnee.LeftAnkle.LeftToe.OFFSET))/2/100;
+    //AnyVar ToeLength = 
+    #endif
+     
+      
+     
+   };
+        
+   
+
+ };  
+      
+   
+
+#if InverseDynamicModel == 0    
+  // Nodes for upper trunk driving, the position is selv decided
+  
+  Main.Studies.HumanModel.BodyModel.Trunk.SegmentsThorax.ThoraxSeg = {    
+    AnyRefNode ThoraxDriveNode = {
+      sRel = .Scale({0+0.02,0.24,0});
+      #include "DrawBVHHumanModelNodes.any"
+      
+    }; 
+    
+    
+ //Node for lower trunk node2 the position is selv defined
+    
+    AnyRefNode ThoraxDriveNode2 = {
+      sRel = .Scale({0.0+0.03,0.07,0});
+      #include "DrawBVHHumanModelNodes.any"
+      
+    }; 
+    
+    
+     //Node for lower trunk node3 the position is selv defined
+    
+    AnyRefNode ThoraxDriveNode3 = {
+      sRel = .Scale({0.0+0.04,-0.04,0});
+      #include "DrawBVHHumanModelNodes.any"
+      
+    }; 
+ 
+ 
+    
+    //add neck drive node here, selfdefined, in BVH is the head start
+    
+    AnyRefNode NeckDriveNode = {
+      sRel = .Scale({0.0+0.025,0.6-0.02,0});
+      #include "DrawBVHHumanModelNodes.any"
+      
+    }; 
+    
+    
+    // add the Clavicle joint (neck) joint from BVH file, in anybody, i tried T1C5Jnt,
+    // i am not sure that is correct
+    
+          
+    AnyRefNode ClavicleDriveNode = {
+      sRel = .Scale({-0.0+0.02,0.462+0.02,0});
+      #include "DrawBVHHumanModelNodes.any"
+      
+    };
+    
+
+    
+    //add the shoulder drive node here
+    // i can not remember how i find 0.17 here. 0.085 amd 0.42 is find in ij.
+    
+    AnyRefNode RightShoulderDriveNode = {
+      sRel = .Scale({0.0+0.01,0.42,0.17});
+      #include "DrawBVHHumanModelNodes.any"
+      
+    };  
+    
+    AnyRefNode LeftShoulderDriveNode = {
+      sRel = .Scale({0.0+0.01,0.42,-0.17});
+      #include "DrawBVHHumanModelNodes.any"
+      
+    }; 
+     
+    
+   };
+     
+  // use fe joint in at Humerus  
+  Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Humerus = {
+    
+    AnyRefNode RightElbowDriveNode = {
+      sRel = .Scale({0.0045,-0.34,0.0012});
+      //#include "DrawBVHHumanModelNodes.any"
+      
+    };  
+    
+  };
+  
+  
+   
+  // use fe joint 
+  Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Humerus = {
+    
+    AnyRefNode LeftElbowDriveNode = {
+      sRel = .Scale({-0.0045,-0.34,0.0012});
+      //#include "DrawBVHHumanModelNodes.any"
+      
+    };  
+        
+  };
+
+  
+  
+  
+
+  
+  // additional marker
+
+
+
+  Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Humerus = {
+    
+    
+    AnyRefNode RightElbowExtraDriveNode1 = {
+      //sRel = .Scale({0.0045,-0.34,0.0012+0.025});
+      sRel = .Scale({0.0045-0.025,-0.34,0.0012});     
+      #include "DrawBVHHumanModelNodes.any"
+      
+    }; 
+    
+    AnyVar ElbowMarkerDistance1 = vnorm(RightElbowExtraDriveNode1.sRel-RightElbowDriveNode.sRel);
+    
+    
+  };
+  
+    Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Humerus = {
+    
+    
+    AnyRefNode RightElbowExtraDriveNode2 = {
+      //sRel = .Scale({0.0045,-0.34,0.0012-0.025});     
+      sRel = .Scale({0.0045+0.025,-0.34,0.0012}); 
+      #include "DrawBVHHumanModelNodes.any"
+      
+    }; 
+    
+    AnyVar ElbowMarkerDistance2 = vnorm(RightElbowExtraDriveNode2.sRel-RightElbowDriveNode.sRel);
+    
+    
+  };
+  
+  
+  
+    Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Humerus = {   
+    
+    AnyRefNode LeftElbowExtraDriveNode1 = {
+      //sRel = .Scale({-0.0045,-0.34,0.0012+0.025});
+      sRel = .Scale({-0.0045+0.025,-0.34,0.0012});
+      
+      #include "DrawBVHHumanModelNodes.any"
+      
+    };  
+    
+   AnyVar ElbowMarkerDistance1 = vnorm(LeftElbowExtraDriveNode1.sRel-LeftElbowDriveNode.sRel);
+  
+    
+  };
+  
+  
+    
+    Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Humerus = {   
+    
+    AnyRefNode LeftElbowExtraDriveNode2 = {
+      //sRel = .Scale({-0.0045,-0.34,0.0012-0.025});
+      sRel = .Scale({-0.0045-0.025,-0.34,0.0012});
+      
+      #include "DrawBVHHumanModelNodes.any"
+      
+    };  
+    
+   AnyVar ElbowMarkerDistance2 = vnorm(LeftElbowExtraDriveNode2.sRel-LeftElbowDriveNode.sRel);
+  
+    
+  };
+  
+  
+ 
+  
+  
+  Main.ModelSetup.MyModel.RightElbow.Seg= {
+    
+    AnyRefNode RightElbowExtraDriveNode1 = {
+      //sRel = {0,0,-Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Humerus.ElbowMarkerDistance1};
+      sRel = {Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Humerus.ElbowMarkerDistance1,0,0};
+
+      #include "DrawBVHExtraMarkerNodes.any"
+      
+    };  
+    
+  };
+   
+  
+    Main.ModelSetup.MyModel.RightElbow.Seg= {
+    
+    AnyRefNode RightElbowExtraDriveNode2 = {
+      //sRel = {0,0,Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Humerus.ElbowMarkerDistance2};
+      sRel = {-Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Humerus.ElbowMarkerDistance2,0,0};
+
+      #include "DrawBVHExtraMarkerNodes.any"
+
+      
+    };  
+    
+  };
+  
+  
+  
+  Main.ModelSetup.MyModel.LeftElbow.Seg= {
+    
+    AnyRefNode LeftElbowExtraDriveNode1 = {
+      
+      //sRel = {0,0,-Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Humerus.ElbowMarkerDistance1};
+      sRel = {-Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Humerus.ElbowMarkerDistance1,0,0};
+
+      #include "DrawBVHExtraMarkerNodes.any"
+      
+    };      
+    
+  }; 
+  
+  
+    Main.ModelSetup.MyModel.LeftElbow.Seg= {
+    
+    AnyRefNode LeftElbowExtraDriveNode2= {
+      
+      //sRel = {0,0,Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Humerus.ElbowMarkerDistance2};
+      sRel = {Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Humerus.ElbowMarkerDistance2,0,0};
+
+      #include "DrawBVHExtraMarkerNodes.any"
+      
+    };      
+    
+  }; 
+  
+  
+  
+ 
+    //using the wj at the radius as driving node
+  Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Radius= {
+    
+     AnyRefNode RightWristDriveNode = {
+      sRel = .Scale({-0.235, -0.015, 0.01});
+      //#include "DrawBVHHumanModelNodes.any"
+      
+    };  
+
+  };
+  
+  
+   Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Radius= {
+    
+     AnyRefNode LeftWristDriveNode = {
+      sRel = .Scale({-0.235, 0.015, 0.01});// using wj point
+      //#include "DrawBVHHumanModelNodes.any"
+      
+    };
+    
+    
+
+  };
+  
+    Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Radius= {
+    
+     AnyRefNode RightWristExtraDriveNode1 = {
+      sRel = .Scale({-0.235, -0.015-0.026, 0.01});
+      #include "DrawBVHHumanModelNodes.any"
+      
+    }; 
+    
+     AnyVar WristMarkerDistance1 = vnorm(RightWristExtraDriveNode1.sRel-RightWristDriveNode.sRel);
+
+  };
+     
+  
+      Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Radius= {
+    
+     AnyRefNode RightWristExtraDriveNode2 = {
+      sRel = .Scale({-0.235, -0.015+0.026, 0.01});
+      #include "DrawBVHHumanModelNodes.any"
+      
+    }; 
+    
+     AnyVar WristMarkerDistance2 = vnorm(RightWristExtraDriveNode2.sRel-RightWristDriveNode.sRel);
+
+  };
+  
+  
+     Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Radius= {
+    
+     AnyRefNode LeftWristExtraDriveNode1 = {
+      sRel = .Scale({-0.235, 0.015+0.026, 0.01});
+      #include "DrawBVHHumanModelNodes.any"
+      
+    };
+    
+      AnyVar WristMarkerDistance1 = vnorm(LeftWristExtraDriveNode1.sRel-LeftWristDriveNode.sRel);  
+    
+
+  };
+  
+  
+       Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Radius= {
+    
+     AnyRefNode LeftWristExtraDriveNode2 = {
+      sRel = .Scale({-0.235, 0.015-0.026, 0.01});
+      #include "DrawBVHHumanModelNodes.any"
+      
+    };
+    
+      AnyVar WristMarkerDistance2 = vnorm(LeftWristExtraDriveNode2.sRel-LeftWristDriveNode.sRel);  
+    
+
+  };
+  
+  
+  Main.ModelSetup.MyModel.LeftWrist.Seg = {
+    
+        AnyRefNode LeftWristExtraDriveNode1 = {
+      //sRel= {0,0,0};
+      sRel = {0,0,Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Radius.WristMarkerDistance1};
+      //sRel = {Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Radius.WristMarkerDistance,0,0};
+
+      #include "DrawBVHExtraMarkerNodes.any"
+      
+    }; 
+       
+    
+  }; 
+  
+  
+    Main.ModelSetup.MyModel.LeftWrist.Seg = {
+    
+        AnyRefNode LeftWristExtraDriveNode2 = {
+      //sRel= {0,0,0};
+      sRel = {0,0,-Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Radius.WristMarkerDistance2};
+      //sRel = {Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Radius.WristMarkerDistance,0,0};
+
+      #include "DrawBVHExtraMarkerNodes.any"
+      
+    }; 
+       
+    
+  }; 
+  
+  
+  
+  Main.ModelSetup.MyModel.RightWrist.Seg = {
+    
+        AnyRefNode RightWristExtraDriveNode1 = {
+       sRel = {0,0,-Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Radius.WristMarkerDistance1};
+       //sRel = {Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Radius.WristMarkerDistance,0,0};
+      #include "DrawBVHExtraMarkerNodes.any"
+
+      
+    };  
+    
+  }; 
+  
+  
+    Main.ModelSetup.MyModel.RightWrist.Seg = {
+    
+        AnyRefNode RightWristExtraDriveNode2 = {
+       sRel = {0,0,Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Radius.WristMarkerDistance2};
+       //sRel = {Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Radius.WristMarkerDistance,0,0};
+      #include "DrawBVHExtraMarkerNodes.any"
+
+      
+    };  
+    
+  }; 
+  
+  
+    Main.Studies.HumanModel.BodyModel.Right.ShoulderArm.Seg.Hand = {
+    
+     AnyRefNode RightHandDriveNode1 = {
+      sRel = .Scale({-0.095, -0.043, 0});// using Palmjoint
+      #include "DrawBVHHumanModelNodes.any"
+      
+    };  
+    
+    
+      AnyRefNode RightHandDriveNode2 = {
+      sRel = .Scale({-0.09, 0.018, 0.0});// using Palmjoint
+      #include "DrawBVHHumanModelNodes.any"
+      
+    }; 
+       
+    
+  };
+  
+   Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Hand = {
+    
+  
+    AnyRefNode LeftHandDriveNode1 = {
+      sRel = .Scale({-0.095,-0.043,0.00});// using Palmjoint
+      #include "DrawBVHHumanModelNodes.any"
+      
+    }; 
+    
+     AnyRefNode LeftHandDriveNode2 = {
+      sRel = .Scale({-0.09,0.018,-0.00});// using Palmjoint
+      #include "DrawBVHHumanModelNodes.any"
+      
+    }; 
+    
+    
+        
+  };
+
+  
+       
+    
+  
+  Main.Studies.HumanModel.BodyModel.Trunk.SegmentsThorax.SkullSeg = {
+    
+    
+     AnyRefNode HeadDriveNode = {
+      sRel = .Scale({0.0,0.0,0.0});
+      #include "DrawBVHHumanModelNodes.any"
+      
+    };  
+       
+    
+  };
+  
+  
+ 
+   
+  
+  
+  Main.Studies.HumanModel.BodyModel.Trunk.SegmentsLumbar.PelvisSeg = {
+    
+     AnyRefNode PelvisNodes = {
+      //sRel = .Scale({0.035+0.035, -0.115, 0});
+      sRel = .Scale({0.035, -0.115, 0});
+      #include "DrawBVHHumanModelNodes.any"
+         
+     };// using midt in hips
+    
+       
+     
+    AnyRefNode RightHipDriveNode = {
+      //sRel = .Scale({0.035+0.035, -0.115+0.004, 0.088});
+      sRel = .Scale({0.035, -0.115+0.01, 0.088});
+      #include "DrawBVHHumanModelNodes.any"
+         
+     };
+      
+      AnyRefNode LeftHipDriveNode = {
+      //sRel = .Scale({0.035+0.035, -0.115+0.004, -0.088});
+      sRel = .Scale({0.035, -0.115+0.01, -0.088});
+      #include "DrawBVHHumanModelNodes.any"
+    
+    };  
+    
+    
+  };
+  
+
+
+  
+  /*Main.Studies.HumanModel.BodyModel.Left.ShoulderArm.Seg.Hand = {
+    
+  
+    AnyRefNode LeftHandDriveNode = {
+      sRel = .Scale({-0.08,-0.02,0.0});// using Palmjoint
+      AnyDrawRefFrame drw ={RGB={0,1,0};};
+      AnyDrawNode drw2 = {RGB={0,1,0};
+        ScaleXYZ=0.01*{1,1,1};
+      };   
+      
+    };  
+        
+  };*/
+
+  
+  
+ #if LEGS_INCLUDED == 1
+
+  // using knee joint standard 
+  
+  Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Patella = {
+    
+      AnyRefNode LeftKneeDriveNode = {
+      sRel = .Scale({0.0384, -0.4078,-1*0.0138});
+      //#include "DrawBVHHumanModelNodes.any"
+      
+    };  
+    
+  };
+  
+ 
+  
+  
+  Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Patella = {
+    
+      AnyRefNode RightKneeDriveNode = {
+      sRel = .Scale({0.0384, -0.4078,1*0.0138});
+      //#include "DrawBVHHumanModelNodes.any"
+      
+    };  
+    
+  };
+  
+  
+
+  
+  
+  
+  // using AkleJoint standard
+  Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Shank = {
+    
+      AnyRefNode RightAnkleDriveNode = {
+      sRel = .Scale({0.072, -0.8275+0.01, 0.0125});       
+      //#include "DrawBVHHumanModelNodes.any"
+      
+    };  
+    
+  };
+  
+  
+  
+  
+  Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Shank = {
+    
+    AnyRefNode LeftAnkleDriveNode = {
+      sRel = .Scale({0.072, -0.8275+0.01, -1*0.0125});
+      //#include "DrawBVHHumanModelNodes.any"
+      
+    };  
+    
+  };
+  
+  
+  
+  //Extra leg driver
+  
+  Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Patella = {
+        AnyRefNode RightKneeExtraDriveNode1 = {
+      //sRel = .Scale({0.0384+0.07, -0.4078, 0.0138+0.03}); // the marker at the front
+      sRel = .Scale({0.0384+0.02, -0.4078, 0.0138-0.05});  //the marker is inside right knee   
+      #include "DrawBVHHumanModelNodes.any"
+      
+    }; 
+    
+    AnyVar KneeMarkerDistance1 = vnorm(RightKneeExtraDriveNode1.sRel-RightKneeDriveNode.sRel);
+    
+  };
+  
+  
+  
+ Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Patella = {
+        AnyRefNode RightKneeExtraDriveNode2 = {
+      sRel = .Scale({0.0384-0.02, -0.4078, 0.0138+0.05}); // the marker outside right knee 
+      #include "DrawBVHHumanModelNodes.any"
+      
+    }; 
+    
+    AnyVar KneeMarkerDistance2 = vnorm(RightKneeExtraDriveNode2.sRel-RightKneeDriveNode.sRel);
+    
+  };
+  
+  
+  Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Patella = {
+      AnyRefNode LeftKneeExtraDriveNode1 = {
+      //sRel = .Scale({0.0384+0.07, -0.4078,-1*0.0138-0.03}); // the marker at the front     
+      sRel = .Scale({0.0384+0.02, -0.4078, -0.0138+0.05}); //the marker is inside the left knee
+      #include "DrawBVHHumanModelNodes.any"
+      
+    };
+    
+    AnyVar KneeMarkerDistance1 = vnorm(LeftKneeExtraDriveNode1.sRel-LeftKneeDriveNode.sRel);
+    
+  };
+  
+  
+
+  
+  
+  
+      Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Patella = {
+        AnyRefNode LeftKneeExtraDriveNode2 = {
+      sRel = .Scale({0.0384-0.02, -0.4078, -0.0138-0.05}); // the marker outside left knee
+      #include "DrawBVHHumanModelNodes.any"
+      
+    }; 
+    
+    AnyVar KneeMarkerDistance2 = vnorm(LeftKneeExtraDriveNode2.sRel-LeftKneeDriveNode.sRel);
+    
+  };
+  
+   
+  Main.ModelSetup.MyModel.RightKnee.Seg = {
+      AnyRefNode RightKneeExtraDriveNode1 = {
+        //sRel = {0,0,0+Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Patella.KneeMarkerDistance};
+        sRel = {0+Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Patella.KneeMarkerDistance1,0,0};//inside
+      #include "DrawBVHExtraMarkerNodes.any"
+      
+    };  
+    
+  };
+  
+  
+  
+    Main.ModelSetup.MyModel.RightKnee.Seg = {
+      AnyRefNode RightKneeExtraDriveNode2 = {
+        //sRel = {0,0,0+Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Patella.KneeMarkerDistance};
+        sRel = {0-Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Patella.KneeMarkerDistance2,0,0};//outside
+      #include "DrawBVHExtraMarkerNodes.any"
+      
+    };  
+    
+  };
+  
+  
+  
+  
+  Main.ModelSetup.MyModel.LeftKnee.Seg = {
+      AnyRefNode LeftKneeExtraDriveNode1 = {
+      //sRel = {0,0,0+Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Patella.KneeMarkerDistance}; 
+      sRel = {-Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Patella.KneeMarkerDistance1,0,0};//inside
+      #include "DrawBVHExtraMarkerNodes.any"
+     
+    };  
+    
+  };
+  
+  
+    Main.ModelSetup.MyModel.LeftKnee.Seg = {
+      AnyRefNode LeftKneeExtraDriveNode2 = {
+      //sRel = {0,0,0+Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Patella.KneeMarkerDistance}; 
+      sRel = {Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Patella.KneeMarkerDistance2,0,0};//outside
+      #include "DrawBVHExtraMarkerNodes.any"
+      
+    };  
+    
+  };
+  
+ 
+  
+  
+  //addition ankel marker
+  
+  
+  
+     Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Shank = {
+    
+      AnyRefNode RightAnkleExtraDriveNode1 = {
+      sRel = .Scale({0.072+0.02, -0.8275+0.01, 0.0125-0.03}); // Right marker inside
+      #include "DrawBVHHumanModelNodes.any"
+      
+    };
+    
+     AnyVar AnkleMarkerDistance1 = vnorm(RightAnkleExtraDriveNode1.sRel-RightAnkleDriveNode.sRel);
+
+    
+  };
+  
+  
+     Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Shank = {
+    
+      AnyRefNode RightAnkleExtraDriveNode2 = {
+      //sRel = .Scale({0.072+0.03, -0.8275+0.01, 0.0125+0.02}); // the marker at the front
+      sRel = .Scale({0.072-0.02, -0.8275+0.01, 0.0125+0.03});// Right marker outside
+      #include "DrawBVHHumanModelNodes.any"
+      
+    };
+    
+     AnyVar AnkleMarkerDistance2 = vnorm(RightAnkleExtraDriveNode2.sRel-RightAnkleDriveNode.sRel);
+
+    
+  };
+  
+  
+     Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Shank = {
+    
+      AnyRefNode LeftAnkleExtraDriveNode1 = {
+      sRel = .Scale({0.072+0.02, -0.8275+0.01, -0.0125+0.03}); // Left marker inside
+      #include "DrawBVHHumanModelNodes.any"
+      
+    };  
+    
+    AnyVar AnkleMarkerDistance1= vnorm(LeftAnkleExtraDriveNode1.sRel-LeftAnkleDriveNode.sRel);
+
+    
+  };
+  
+  
+  
+     Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Shank = {
+    
+      AnyRefNode LeftAnkleExtraDriveNode2 = {
+      //sRel = .Scale({0.072+0.03, -0.8275+0.01, -0.0125-0.02}); // the marker at the front
+      sRel = .Scale({0.072-0.02, -0.8275+0.01, -0.0125-0.03}); //left marker outside
+      #include "DrawBVHHumanModelNodes.any"
+      
+    };  
+    
+    AnyVar AnkleMarkerDistance2 = vnorm(LeftAnkleExtraDriveNode2.sRel-LeftAnkleDriveNode.sRel);
+
+    
+  };
+  
+    
+  
+  
+  
+  Main.ModelSetup.MyModel.RightAnkle.Seg = {
+
+      AnyRefNode RightAnkleExtraDriveNode1 = {
+        //sRel = {0,0,0+Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Shank.AnkleMarkerDistance};
+        sRel = {Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Shank.AnkleMarkerDistance1,0,0};
+      #include "DrawBVHExtraMarkerNodes.any"
+      
+    };  
+    
+  };
+  
+  
+  
+    Main.ModelSetup.MyModel.RightAnkle.Seg = {
+
+      AnyRefNode RightAnkleExtraDriveNode2 = {
+        //sRel = {0,0,0+Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Shank.AnkleMarkerDistance};
+        sRel = {-Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Shank.AnkleMarkerDistance2,0,0};
+      #include "DrawBVHExtraMarkerNodes.any"
+      
+    };  
+    
+  };
+  
+  Main.ModelSetup.MyModel.LeftAnkle.Seg = {
+
+      AnyRefNode LeftAnkleExtraDriveNode1 = {
+      //sRel = {0,0,0+Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Shank.AnkleMarkerDistance}; 
+      sRel = {-Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Shank.AnkleMarkerDistance1,0,0};  
+      #include "DrawBVHExtraMarkerNodes.any"
+      
+    };  
+    
+  };
+  
+  
+    Main.ModelSetup.MyModel.LeftAnkle.Seg = {
+
+      AnyRefNode LeftAnkleExtraDriveNode2 = {
+      //sRel = {0,0,0+Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Shank.AnkleMarkerDistance}; 
+      sRel = {Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Shank.AnkleMarkerDistance2,0,0};  
+      #include "DrawBVHExtraMarkerNodes.any"
+
+      
+    };  
+    
+  };
+  
+  
+  
+    Main.Studies.HumanModel.BodyModel.Left.Leg.Seg.Foot = {
+    
+      AnyRefNode LeftFootDriveNode = {
+      sRel = .Scale({0.18-0.03, -0.95, -0.05-0.02});
+      #include "DrawBVHHumanModelNodes.any"
+      
+    };  
+    
+  };
+  
+      Main.Studies.HumanModel.BodyModel.Right.Leg.Seg.Foot = {
+    
+      AnyRefNode RightFootDriveNode = {
+      sRel = .Scale({0.18-0.03, -0.95, 0.05+0.02});
+      #include "DrawBVHHumanModelNodes.any"
+      
+    };  
+    
+  };
+  
+
+  
+  
+  #endif
+  
+    
+  
+  
+#endif
+  
+  
+   AnyVec3 Gravity=  {0.0,-9.82,0};
+//  AnyFolder &DynamicDataSet = C3DFileData ;
+//  AnyInputC3D C3DFileData =   {
+//    AnyString PrefixStr=""; //if the dataset makes use of a prefix name which goes in front of all markers and processed datanames write it here
+//    #define PrefixDef(Arg) Arg
+//    AnyString TrialName = Main.TrialSpecificData.TrialName;
+//    //FileName =  TRIAL_PATH+ TrialName + ".c3d";
+//    FileName = TRIAL_PATH+"Trial01.c3d";
+//    ConstructModelOnOff = Off; //If this is set to on it will display the markers but slow down the analysis a lot....
+//    MarkerUseAllPointsOnOff = On; 
+//    MarkerUseCamMaskOnOff = Off;
+//    PointsScaleFactor = 1/1000;
+//    ConstructChartOnOff=Off;
+//    SearchAndReplace = {{".",""}};
+//    MarkerDrawOnOff =Off;
+//    AnalogFilterIndex =1;
+//    
+//    Filter =  {
+//      N = 2;
+//      Fc = {10};
+//      Type = LowPass;
+//    };
+//    
+//    
+//    /// This filter is used for the analog data
+//    AnyFunButterworthFilter LowPassFilter = {
+//      FilterForwardBackwardOnOff = On;
+//      AutomaticInitialConditionOnOff = On;
+//      N = 2;
+//      AnyVar CutOffFrequency=12;
+//      AnyVar SampleFreq=.Header.VideoFrameRate* .Header.NoAnalogSamplesPer3DFrame   ;
+//      W = {1/(SampleFreq*0.5)*CutOffFrequency};
+//      Type = LowPass;
+//    };
+//    
+//    
+//    MarkerScaleXYZ = 0.015*{1,1,1};
+//    MarkerRGB={0,0,1};
+//  };
+// 
+  
+  AnyFloatVar  tStart = Main.TrialSpecificData.tStart;
+  AnyFloatVar  tEnd = Main.TrialSpecificData.tEnd;
+  AnyIntVar nStep = Main.TrialSpecificData.nStep;
+
+    AnyFolder FileNames={
+    //Definition of file names
+    AnyFileVar KinResults = TRIAL_PATH+ "/"+ Main.TrialSpecificData.TrialName + "-Kinematics.anydata.h5";
+    AnyFileVar Results = TRIAL_PATH + "/"+ Main.TrialSpecificData.TrialName + ".anydata.h5";
+    AnyFileVar OptimizedParameters = TRIAL_PATH+ "/"+ Main.TrialSpecificData.TrialName + "-OptimizedParameters.txt";
+    AnyFileVar WidgetValues =TRIAL_PATH+ "/"+ Main.TrialSpecificData.TrialName + ".anyset";
+    AnyFileVar OptimizedMotionTrunk = TRIAL_PATH+  "/"+ Main.TrialSpecificData.TrialName + "-output-euler-trunk.txt";
+    
+    AnyFileVar OptimizedMotionLeftArm = TRIAL_PATH+ "/"+ Main.TrialSpecificData.TrialName + "-output-euler-leftarm.txt";
+    AnyFileVar OptimizedMotionRightArm =TRIAL_PATH+ "/"+ Main.TrialSpecificData.TrialName + "-output-euler-rightarm.txt";
+    
+   
+    #if LEGS_INCLUDED == 1
+    
+    AnyFileVar OptimizedMotionLeftLegTD = TRIAL_PATH+ "/"+ Main.TrialSpecificData.TrialName + "-output-euler-leftlegtd.txt";
+    AnyFileVar OptimizedMotionRightLegTD = TRIAL_PATH+ "/"+ Main.TrialSpecificData.TrialName + "-output-euler-rightlegtd.txt";
+    AnyFileVar OptimizedMotionLeftLeg = TRIAL_PATH+ "/"+ Main.TrialSpecificData.TrialName + "-output-euler-leftleg.txt";
+    AnyFileVar OptimizedMotionRightLeg =TRIAL_PATH+ "/"+ Main.TrialSpecificData.TrialName + "-output-euler-rightleg.txt";
+    
+    #endif
+   
+  };
+
+
+  
+  
+//   OptimizeAnthropometricsOnOff OptimizeOnOff (
+//  PelvisWidthOnOff ="On", 
+//  ThighLengthOnOff="On", 
+//  ShankLengthOnOff="On", 
+//  FootLengthOnOff="On", 
+//  HeadHeightOnOff="Off", 
+//  TrunkHeightOnOff="On", 
+//  UpperArmLengthOnOff="Off",
+//  LowerArmLengthOnOff="Off",
+//  HandLengthOnOff="Off",
+//  Model1=MotionAndParameterOptimizationModel, Model2= InverseDynamicModel, Model3=0 ) ={};
+//
+//  #include "MarkerSetup.any"
+
+
+};
+
+
+
+
+
+

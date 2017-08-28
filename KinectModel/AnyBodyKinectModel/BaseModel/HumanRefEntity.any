@@ -1,0 +1,286 @@
+AnyFolder SWHumanRefNodes=
+{
+  //************** RIGHT FOOT **************//     
+  AnySeg &refRightFoot = ...HumanModel.BodyModel.Right.Leg.Seg.Foot;
+  refRightFoot =
+  {         
+    AnyRefNode SWRightFootToe1=
+    {
+      sRel = .BigToeNode.sRel;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                    
+    };
+    
+    AnyRefNode SWRightFootToe2=
+    {
+      sRel = {0.005,0,0.005} + .ExtensorDigitorumLongus1Node.sRel;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                
+    };
+    
+    AnyRefNode SWRightFootToe3=
+    {
+      sRel = (2*.SWRightFootToe2.sRel- .SWRightFootToe1.sRel)/2 + .SWRightFootMedial5.sRel/2;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                   
+    };
+    
+    AnyRefNode SWRightFootMedial1=
+    {
+      sRel = .MetatarsalJoint1Node.sRel;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                 
+    };
+    
+    AnyRefNode SWRightFootMedial2=
+    {
+      sRel = .MetatarsalJoint2Node.sRel;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                  
+    };
+    
+    AnyRefNode SWRightFootMedial3=
+    {
+      sRel = .MetatarsalJoint3Node.sRel;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                    
+    };
+    
+    AnyRefNode SWRightFootMedial4=
+    {
+      sRel = .MetatarsalJoint4Node.sRel;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                   
+    };
+    
+    AnyRefNode SWRightFootMedial5=
+    {
+      sRel = .MetatarsalJoint5Node.sRel;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                   
+    };
+    
+    AnyRefNode SWRightFootHeel=
+    {
+      sRel = {0.01,-0.004,0.005} + .HeelJoint.sRel;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                   
+    };   
+  };
+  
+  refRightFoot.ScalingNode = {
+    AnyRefNode SWRightFootMedial6=
+    {
+      sRel = {0.10,-0.012,0.05};
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };   
+      //AnyDrawRefFrame drw ={};             
+    };
+    
+    AnyRefNode SWRightFootMedial7=
+    {
+      sRel = {0.11,-0.009,0.02};
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };    
+      //AnyDrawRefFrame drw ={};             
+    };
+    
+    AnyRefNode SWRightFootMedial8=
+    {
+      sRel = {0.115,-0.006,-0.015};
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };  
+     // AnyDrawRefFrame drw ={};
+    };
+  };
+  
+  //************** LEFT FOOT **************//
+  AnySeg &refLeftFoot = ...HumanModel.BodyModel.Left.Leg.Seg.Foot;
+  refLeftFoot =
+  {        
+    AnyRefNode SWLeftFootToe1=
+    {
+      sRel = .BigToeNode.sRel;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                 
+    };
+    
+    AnyRefNode SWLeftFootToe2=
+    {
+      sRel = {0.005,0,-0.005} + .ExtensorDigitorumLongus1Node.sRel;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                   
+    };
+    
+    AnyRefNode SWLeftFootToe3=
+    {
+      sRel = (2*.SWLeftFootToe2.sRel- .SWLeftFootToe1.sRel)/2 + .SWLeftFootMedial5.sRel/2;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                  
+    };
+    
+    AnyRefNode SWLeftFootMedial1=
+    {
+      sRel = .MetatarsalJoint1Node.sRel;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                    
+    };
+    
+    AnyRefNode SWLeftFootMedial2=
+    {
+      sRel = .MetatarsalJoint2Node.sRel;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                   
+    };
+    
+    AnyRefNode SWLeftFootMedial3=
+    {
+      sRel = .MetatarsalJoint3Node.sRel;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                    
+    };
+    
+    AnyRefNode SWLeftFootMedial4=
+    {
+      sRel = .MetatarsalJoint4Node.sRel;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                   
+    };
+    
+    AnyRefNode SWLeftFootMedial5=
+    {
+      sRel = .MetatarsalJoint5Node.sRel;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                   
+    };
+    
+    AnyRefNode SWLeftFootHeel=
+    {
+      sRel = {0.01,-0.004,-0.005} + .HeelJoint.sRel;
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };                  
+    };   
+  };
+  
+  refLeftFoot.ScalingNode = {
+    AnyRefNode SWLeftFootMedial6=
+    {
+      sRel = {0.10,-0.012,-0.05};
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };   
+     // AnyDrawRefFrame drw ={};             
+    };
+    
+    AnyRefNode SWLeftFootMedial7=
+    {
+      sRel = {0.11,-0.009,-0.02};
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };    
+      //AnyDrawRefFrame drw ={};             
+    };
+    
+    AnyRefNode SWLeftFootMedial8=
+    {
+      sRel = {0.115,-0.006,0.015};
+      //ARel = RotMat(180*pi/180, y);
+      AnyDrawNode DrwRefNode=
+      {
+        RGB={0.0, 1.0, 0.0};
+        ScaleXYZ=0.005*{1, 1, 1};
+      };  
+      //AnyDrawRefFrame drw ={};
+    };
+  };
+};
