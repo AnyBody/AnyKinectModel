@@ -13,3 +13,5 @@ The model utililize a BVH file obtained with the IPi software (http://ipisoft.co
 5. addpath('../../ndlutil-master');
 
 Please notice that the model was originally developed for AnyBody Managed Model Repository version 1.5 and incompatibility issues with later versions can occur.
+
+# Instructions for how to model based on newly collected data to come....
